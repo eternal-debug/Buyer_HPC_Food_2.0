@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hpc_food/common/app_style.dart';
 import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/constants/constants.dart';
+import 'package:intl/intl.dart';
 
 class FoodWidget extends StatelessWidget {
   const FoodWidget({
@@ -17,7 +18,7 @@ class FoodWidget extends StatelessWidget {
   final String image;
   final String title;
   final String time;
-  final String price;
+  final int price;
   final void Function()? onTap;
 
   @override
@@ -66,7 +67,8 @@ class FoodWidget extends StatelessWidget {
                           ),
                         ),
                         ReusableText(
-                          text: '$price đ',
+                          text:
+                              '${NumberFormat.currency(locale: 'vi', symbol: '').format(price).replaceAll(',', '.')}đ',
                           style: appStyle(15, cPrimary, FontWeight.w600),
                         ),
                       ],

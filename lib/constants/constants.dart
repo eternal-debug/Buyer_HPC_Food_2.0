@@ -43,19 +43,6 @@ const cDark = Color(0xFF37474F);
 const cRed = Color(0xFFE57373);
 const cOffWhite = Color(0xFFFAFAFA);
 
-// const cPrimary = Color(0xFF1E1E2C);
-// const cPrimaryLight = Color(0xFF2E2E3E);
-// const cSecondary = Color(0xFFBB86FC);
-// const cSecondaryLight = Color(0xFF9E79DF);
-// const cTertiary = Color(0xFF03DAC6);
-// const cGray = Color(0xFF4A4A58);
-// const cGrayLight = Color(0xFF6B6B78);
-// const cLightWhite = Color(0xFFA1A1B3);
-// const cWhite = Color(0xFFDADADA);
-// const cDark = Color(0xFF121212);
-// const cRed = Color(0xFFCF6679);
-// const cOffWhite = Color(0xFF3B3B47);
-
 double height = 825.h;
 double width = 375.w;
 

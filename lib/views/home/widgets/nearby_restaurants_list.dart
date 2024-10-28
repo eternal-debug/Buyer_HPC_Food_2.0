@@ -13,7 +13,7 @@ class NearbyRestaurantsList extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: List.generate(
-          restaurants.length,
+          restaurants.length > 5 ? 5 : restaurants.length,
           (index) {
             var restaurant = restaurants[index];
             return RestaurantWidget(

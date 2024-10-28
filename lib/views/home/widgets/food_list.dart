@@ -13,7 +13,7 @@ class FoodList extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: List.generate(
-          foods.length,
+          foods.length > 5 ? 5 : foods.length,
           (index) {
             var food = foods[index];
             return FoodWidget(

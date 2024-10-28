@@ -137,6 +137,50 @@ List<dynamic> restaurants = [
       "latitudeDelta": 0.0122,
       "longitudeDelta": 0.0221
     }
+  },
+  {
+    "_id": "6530eb23c9e72013e5b65950",
+    "title": "DingTea Văn Điển",
+    "time": "9:00am - 10:00pm",
+    "imageUrl":
+        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103140/z9cikinb94oecivl499v.jpg",
+    "owner": "Nguyễn Văn D",
+    "code": "100004",
+    "logoUrl":
+        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103139/prf0z2ulmwoixjybt9yz.jpg",
+    "rating": 4.5,
+    "ratingCount": "1500",
+    "description": {
+      "id": "2004",
+      "latitude": 20.9493189,
+      "longitude": 105.8448792,
+      "address": "267 Đ. Ngọc Hồi, Văn Điển, Thanh Trì, Hà Nội, Việt Nam",
+      "title": "DingTea Văn Điển",
+      "latitudeDelta": 0.0122,
+      "longitudeDelta": 0.0221
+    }
+  },
+  {
+    "_id": "6530eb23c9e72013e5b65951",
+    "title": "Pizza Domino",
+    "time": "10:00am - 11:00pm",
+    "imageUrl":
+        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103139/dl9wqrb0b5yqromatlv7.jpg",
+    "owner": "Nguyễn Văn E",
+    "code": "100005",
+    "logoUrl":
+        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103138/sabfwzs40ecvmuq6zxyt.png",
+    "rating": 4.7,
+    "ratingCount": "1800",
+    "description": {
+      "id": "2005",
+      "latitude": 20.9562045,
+      "longitude": 105.8085151,
+      "address": "P612 Ct 10b, chung cư đại thanh, Thanh Trì, Hà Nội, Việt Nam",
+      "title": "Pizza Domino HPC",
+      "latitudeDelta": 0.0122,
+      "longitudeDelta": 0.0221
+    }
   }
 ];
 
@@ -153,11 +197,11 @@ List<Map<String, dynamic>> foods = [
     "ratingCount": "520",
     "description":
         "Món cơm chiên truyền thống với trứng, thịt và rau củ tươi ngon.",
-    "price": "49.000",
+    "price": 49000,
     "additives": [
-      {"id": 1, "title": "Thịt Nướng", "price": "2.00"},
-      {"id": 2, "title": "Trứng Chiên", "price": "1.00"},
-      {"id": 3, "title": "Đậu Hà Lan", "price": "0.50"}
+      {"id": 1, "title": "Thịt Nướng", "price": 15000},
+      {"id": 2, "title": "Trứng Chiên", "price": 10000},
+      {"id": 3, "title": "Đậu Hà Lan", "price": 5000}
     ],
     "imageUrl":
         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049911/rvkxprrgun17c53laii4.jpg",
@@ -177,10 +221,10 @@ List<Map<String, dynamic>> foods = [
     "ratingCount": "800",
     "description":
         "Phở bò truyền thống với nước dùng thơm ngon và bánh phở tươi.",
-    "price": "79.000",
+    "price": 79000,
     "additives": [
-      {"id": 4, "title": "Thịt Bò Thêm", "price": "3.00"},
-      {"id": 5, "title": "Rau Thơm", "price": "0.50"}
+      {"id": 4, "title": "Thịt Bò Thêm", "price": 30000},
+      {"id": 5, "title": "Rau Thơm", "price": 10000}
     ],
     "imageUrl":
         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049912/ljo9phqrtcwg9hp7vebx.jpg",
@@ -199,10 +243,10 @@ List<Map<String, dynamic>> foods = [
     "rating": 2.7,
     "ratingCount": "600",
     "description": "Bánh mì với thịt nướng thơm lừng và rau sống tươi ngon.",
-    "price": "20.000",
+    "price": 20000,
     "additives": [
-      {"id": 6, "title": "Pate Thêm", "price": "1.00"},
-      {"id": 7, "title": "Rau Thêm", "price": "0.50"}
+      {"id": 6, "title": "Pate Thêm", "price": 5000},
+      {"id": 7, "title": "Rau Thêm", "price": 3000}
     ],
     "imageUrl":
         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049911/lmvpuytgphlnxaurwfrr.jpg",
@@ -221,10 +265,10 @@ List<Map<String, dynamic>> foods = [
     "rating": 1.5,
     "ratingCount": "700",
     "description": "Trà sữa ngọt lịm với trân châu mềm dai.",
-    "price": "25.000",
+    "price": 25000,
     "additives": [
-      {"id": 8, "title": "Thêm Trân Châu", "price": "0.50"},
-      {"id": 9, "title": "Thêm Sữa", "price": "0.50"}
+      {"id": 8, "title": "Thêm Trân Châu", "price": 5000},
+      {"id": 9, "title": "Thêm Sữa", "price": 5000}
     ],
     "imageUrl":
         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049912/ljqsoqbywmf8b8aujlts.jpg",
@@ -243,16 +287,85 @@ List<Map<String, dynamic>> foods = [
     "rating": 2.9,
     "ratingCount": "450",
     "description": "Kem vani mát lạnh, ngon ngọt hoàn hảo cho ngày hè.",
-    "price": "10.000",
+    "price": 10000,
     "additives": [
-      {"id": 10, "title": "Thêm Sốt Sô-Cô-La", "price": "0.50"},
-      {"id": 11, "title": "Thêm Đậu Phộng", "price": "0.30"}
+      {"id": 10, "title": "Thêm Si-rô Sô-Cô-La", "price": 3000},
+      {"id": 11, "title": "Thêm Đậu Phộng", "price": 2000}
     ],
     "imageUrl":
         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049912/xwjel1wlsnwnpjtq7fhw.jpg",
     "__v": 0,
     "category": "6531214cbbe4998e90af4005",
     "time": "2"
+  },
+  {
+    "_id": "6531ebbcc9e72013e5b65935",
+    "title": "Trà Sữa Đặc Biệt",
+    "foodTags": ["Trà", "Sữa", "Trân Châu", "Đặc Biệt"],
+    "foodType": ["Drink", "Snack"],
+    "code": "200006",
+    "isAvailable": true,
+    "restaurant": "6530eb23c9e72013e5b65950",
+    "rating": 4.6,
+    "ratingCount": "1300",
+    "description":
+        "Trà sữa với công thức đặc biệt, trân châu giòn dai hấp dẫn.",
+    "price": 35000,
+    "additives": [
+      {"id": 12, "title": "Thêm Trân Châu Đen", "price": 5000},
+      {"id": 13, "title": "Thêm Thạch Phô Mai", "price": 5000}
+    ],
+    "imageUrl":
+        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103888/sz9ng5d7qkgeunlyrrek.jpg",
+    "__v": 0,
+    "category": "653120babbe4998e90af3ff1",
+    "time": "7"
+  },
+  {
+    "_id": "6531ebbcc9e72013e5b65936",
+    "title": "Pizza Hải Sản",
+    "foodTags": ["Pizza", "Hải Sản", "Phô Mai", "Món Tây"],
+    "foodType": ["Main Course", "Dinner"],
+    "code": "200007",
+    "isAvailable": true,
+    "restaurant": "6530eb23c9e72013e5b65951",
+    "rating": 4.7,
+    "ratingCount": "1100",
+    "description":
+        "Pizza với hải sản tươi ngon, phô mai béo ngậy và lớp vỏ giòn.",
+    "price": 150000,
+    "additives": [
+      {"id": 14, "title": "Thêm Phô Mai", "price": 30000},
+      {"id": 15, "title": "Thêm Xúc Xích", "price": 30000}
+    ],
+    "imageUrl":
+        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103888/s4fwd8zmynjyga5gqfcu.webp",
+    "__v": 0,
+    "category": "653120e1bbe4998e90af3ff3",
+    "time": "20"
+  },
+  {
+    "_id": "6531ebbcc9e72013e5b65937",
+    "title": "Pizza Bò BBQ",
+    "foodTags": ["Pizza", "Bò", "BBQ", "Phô Mai"],
+    "foodType": ["Main Course", "Dinner"],
+    "code": "200008",
+    "isAvailable": true,
+    "restaurant": "6530eb23c9e72013e5b65951",
+    "rating": 4.8,
+    "ratingCount": "1400",
+    "description":
+        "Pizza với thịt bò nướng BBQ, kết hợp với sốt thơm ngon và phô mai béo ngậy.",
+    "price": 165000,
+    "additives": [
+      {"id": 16, "title": "Thêm Phô Mai", "price": 30000},
+      {"id": 17, "title": "Thêm Sốt BBQ", "price": 15000}
+    ],
+    "imageUrl":
+        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103889/txxsa5rhgnvufzsrajvh.jpg",
+    "__v": 0,
+    "category": "653120e1bbe4998e90af3ff3",
+    "time": "25"
   }
 ];
 
@@ -267,13 +380,12 @@ const cart = [
       "rating": 4.9,
       "ratingCount": "520",
       "imageUrl": [
-        "assets/foodly/com_chien.png",
-        "https://example.com/uploads/com_chien_duong_chau.jpg"
+        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049911/rvkxprrgun17c53laii4.jpg"
       ]
     },
     "additives": ["Thịt Nướng", "Trứng Chiên"],
     "instructions": "Không cay, thêm chút nước tương",
-    "totalPrice": 9.99,
+    "totalPrice": 49000,
     "quantity": 1,
     "__v": 0
   }

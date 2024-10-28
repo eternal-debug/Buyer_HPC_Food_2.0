@@ -5,6 +5,7 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:hpc_food/common/app_style.dart';
 import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/constants/constants.dart';
+import 'package:intl/intl.dart';
 
 class FoodTile extends StatelessWidget {
   const FoodTile({super.key, required this.food});
@@ -126,7 +127,8 @@ class FoodTile extends StatelessWidget {
               ),
               child: Center(
                 child: ReusableText(
-                  text: '${food['price']}đ',
+                  text:
+                      '${NumberFormat.currency(locale: 'vi', symbol: '').format(food['price']).replaceAll(',', '.')}đ',
                   style: appStyle(10, cLightWhite, FontWeight.w600),
                 ),
               ),
