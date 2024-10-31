@@ -32,8 +32,8 @@ class RestaurantWidget extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(right: 12.w),
         child: Container(
-          width: width * .75,
-          height: 200.h,
+          width: width * 0.8,
+          height: 230.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.r),
             color: cLightWhite,
@@ -48,7 +48,7 @@ class RestaurantWidget extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(12.r),
                       child: SizedBox(
-                        height: 140.h,
+                        height: 160.h,
                         width: width * 0.8,
                         child: Image.network(
                           image,
@@ -81,30 +81,20 @@ class RestaurantWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SizedBox(
-                          width: 150.w,
+                          width: 170.w,
                           child: ReusableText(
                             text: title,
-                            style: appStyle(12, cDark, FontWeight.w500),
+                            style: appStyle(16, cDark, FontWeight.w500),
                           ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            RatingBarIndicator(
-                              rating: rating,
-                              itemBuilder: (context, index) => const Icon(
-                                Icons.star,
-                                color: cPrimary,
-                              ),
-                              itemCount: 5,
-                              itemSize: 15.h,
-                            ),
-                            SizedBox(width: 10.w),
-                            ReusableText(
-                              text: '($ratingCount)',
-                              style: appStyle(9, cGray, FontWeight.w500),
-                            ),
-                          ],
+                        RatingBarIndicator(
+                          rating: rating,
+                          itemBuilder: (context, index) => const Icon(
+                            Icons.star,
+                            color: cPrimary,
+                          ),
+                          itemCount: 5,
+                          itemSize: 20.h,
                         ),
                       ],
                     ),
@@ -113,11 +103,11 @@ class RestaurantWidget extends StatelessWidget {
                       children: [
                         ReusableText(
                           text: 'Giờ mở cửa',
-                          style: appStyle(9, cGray, FontWeight.w500),
+                          style: appStyle(10, cGray, FontWeight.w600),
                         ),
                         ReusableText(
                           text: time,
-                          style: appStyle(9, cDark, FontWeight.w500),
+                          style: appStyle(10, cDark, FontWeight.bold),
                         ),
                       ],
                     ),

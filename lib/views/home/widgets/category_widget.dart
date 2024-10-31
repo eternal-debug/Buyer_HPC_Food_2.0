@@ -7,63 +7,64 @@ import 'package:hpc_food/common/app_style.dart';
 import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/constants/constants.dart';
 import 'package:hpc_food/controller/category_controller.dart';
+import 'package:hpc_food/model/categories_model.dart';
 import 'package:hpc_food/views/category/all_categories.dart';
 
 class CategoryWidget extends StatelessWidget {
   CategoryWidget({
     super.key,
-    this.category,
+    required this.category,
   });
 
-  var category;
+  CategoriesModel category;
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(CategoryController());
     return GestureDetector(
       onTap: () {
-        if (controller.categoryValue == category['_id']) {
+        if (controller.categoryValue == category.id) {
           controller.updateCategory = '';
           controller.updateTitle = '';
-        } else if (category['value'] == 'khac') {
+        } else if (category.value == 'all') {
           Get.to(
             () => const AllCategories(),
             transition: Transition.fadeIn,
             duration: const Duration(milliseconds: 200),
           );
         } else {
-          controller.updateCategory = category['_id'];
-          controller.updateTitle = category['title'];
+          controller.updateCategory = category.id;
+          controller.updateTitle = category.title;
         }
       },
       child: Obx(
         () => Container(
           margin: EdgeInsets.only(right: 5.w),
           padding: EdgeInsets.only(top: 4.w),
-          width: width * 0.19,
+          width: width * 0.23,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.r),
-            border: Border.all(
-              color: controller.categoryValue == category['_id']
-                  ? cSecondary
-                  : cOffWhite,
-              width: 0.5.w,
-            ),
+            borderRadius: BorderRadius.circular(12.r),
+            color: controller.categoryValue == category.id
+                ? cGrayLight
+                : cOffWhite,
           ),
           child: Column(
             children: [
               SizedBox(
-                height: 35.h,
+                height: 60.h,
                 child: Image.network(
-                  category['imageUrl'],
+                  category.imageUrl,
                   fit: BoxFit.contain,
+                  errorBuilder: (context, error, stackTrace) {
+                    return const Icon(Icons.error);
+                  },
                 ),
               ),
-              SizedBox(height: 2.h),
+              SizedBox(height: 4.h),
               ReusableText(
-                text: category['title'],
+                text: category.title,
                 style: appStyle(
-                  10,
+                  16,
                   cDark,
                   FontWeight.normal,
                 ),

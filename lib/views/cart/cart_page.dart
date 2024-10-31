@@ -16,7 +16,12 @@ class CartPage extends StatelessWidget {
           height: 130,
         ),
       ),
-      body: SafeArea(child: CustomContainer(containerContent: Container())),
+      body: SafeArea(
+        child: CustomContainer(
+          height: 648.h,
+          containerContent: Container(),
+        ),
+      ),
     );
   }
 }

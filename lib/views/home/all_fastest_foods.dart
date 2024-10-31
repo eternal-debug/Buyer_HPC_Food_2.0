@@ -1,24 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hpc_food/common/app_style.dart';
 import 'package:hpc_food/common/background_container.dart';
 import 'package:hpc_food/common/reusable_text.dart';
+import 'package:hpc_food/common/shimmers/shimmer_widget.dart';
 import 'package:hpc_food/constants/constants.dart';
-import 'package:hpc_food/constants/uidata.dart';
+import 'package:hpc_food/hooks/fetch_foods.dart';
+import 'package:hpc_food/model/foods_model.dart';
 import 'package:hpc_food/views/home/widgets/food_tile.dart';
 
-class AllFastestFoods extends StatelessWidget {
+class AllFastestFoods extends HookWidget {
   const AllFastestFoods({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final hookResults = useFetchFoods();
+    List<FoodsModel>? foods = hookResults.data;
+    final isLoading = hookResults.isLoading;
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: cTertiary,
+        backgroundColor: cPrimary,
         title: ReusableText(
           text: 'Nhanh chóng tiện lợi',
-          style: appStyle(14, cLightWhite, FontWeight.w600),
+          style: appStyle(18, cLightWhite, FontWeight.w600),
         ),
         iconTheme: const IconThemeData(color: cLightWhite),
       ),
@@ -27,16 +34,22 @@ class AllFastestFoods extends StatelessWidget {
           color: cOffWhite,
           child: Padding(
             padding: EdgeInsets.all(12.w),
-            child: ListView(
-              scrollDirection: Axis.vertical,
-              children: List.generate(
-                foods.length,
-                (index) {
-                  var food = foods[index];
-                  return FoodTile(food: food);
-                },
-              ),
-            ),
+            child: isLoading
+                ? ShimmerWidget(
+                    shimmerWidth: width,
+                    shimmerHeight: 100.h,
+                    shimmerRadius: 9,
+                  )
+                : ListView(
+                    scrollDirection: Axis.vertical,
+                    children: List.generate(
+                      foods.length,
+                      (index) {
+                        var food = foods[index];
+                        return FoodTile(food: food);
+                      },
+                    ),
+                  ),
           ),
         ),
       ),

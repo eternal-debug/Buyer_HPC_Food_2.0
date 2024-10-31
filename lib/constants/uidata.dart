@@ -1,188 +1,183 @@
-List<dynamic> categories = [
-  {
-    "_id": "6537ece708ff5b7de97d0695",
-    "title": "Cơm chiên",
-    "value": "com_chien",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039370/hpc_food_2.0/fthaduoe896us41obfa9.png",
-    "createdAt": "2023-10-24T16:12:23.571Z",
-    "updatedAt": "2023-10-24T16:12:23.571Z",
-    "__v": 0
-  },
-  {
-    "_id": "65310f3381e4d98d60b093c5",
-    "title": "Phở",
-    "value": "pho",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039370/hpc_food_2.0/wzu5dmuds7uf2vaic9ve.png",
-    "__v": 0
-  },
-  {
-    "_id": "6531206cbbe4998e90af3feb",
-    "title": "Bánh Mì",
-    "value": "banh_mi",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039370/hpc_food_2.0/ae1deqsct2ek38g2ryu1.png",
-    "__v": 0
-  },
-  {
-    "_id": "653120babbe4998e90af3ff1",
-    "title": "Trà Sữa",
-    "value": "tra_sua",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039370/hpc_food_2.0/veafynmc0stdwua7frhg.png",
-    "__v": 0
-  },
-  {
-    "_id": "65310efb81e4d98d60b093c3",
-    "title": "Gà Rán",
-    "value": "ga_ran",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039370/hpc_food_2.0/mmyex8fgdnis4prp1scx.png",
-    "__v": 0
-  },
-  {
-    "_id": "6531213dbbe4998e90af4003",
-    "title": "Nem Rán",
-    "value": "nem_ran",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039371/hpc_food_2.0/ztlfcwrgww2xsigbvhum.png",
-    "createdAt": "2024-10-26T16:12:23.571Z",
-    "updatedAt": "2024-10-26T16:12:23.571Z",
-    "__v": 0
-  },
-  {
-    "_id": "6531214cbbe4998e90af4005",
-    "title": "Kem",
-    "value": "kem",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039370/hpc_food_2.0/on0qfcprhbfeawmrxslq.png",
-    "createdAt": "2024-10-26T16:12:23.571Z",
-    "updatedAt": "2024-10-26T16:12:23.571Z",
-    "__v": 0
-  },
-  {
-    "_id": "653120e1bbe4998e90af3ff3",
-    "title": "Khác",
-    "value": "khac",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039371/hpc_food_2.0/qx0ljqzgqjfyqp35fd6n.png",
-    "__v": 0
-  }
-];
+// List<dynamic> categories = [
+//   {
+//     "_id": "6537ece708ff5b7de97d0695",
+//     "title": "Cơm chiên",
+//     "value": "com_chien",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039370/hpc_food_2.0/fthaduoe896us41obfa9.png",
+//     "createdAt": "2023-10-24T16:12:23.571Z",
+//     "updatedAt": "2023-10-24T16:12:23.571Z",
+//     "__v": 0
+//   },
+//   {
+//     "_id": "65310f3381e4d98d60b093c5",
+//     "title": "Phở",
+//     "value": "pho",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039370/hpc_food_2.0/wzu5dmuds7uf2vaic9ve.png",
+//     "__v": 0
+//   },
+//   {
+//     "_id": "6531206cbbe4998e90af3feb",
+//     "title": "Bánh Mì",
+//     "value": "banh_mi",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039370/hpc_food_2.0/ae1deqsct2ek38g2ryu1.png",
+//     "__v": 0
+//   },
+//   {
+//     "_id": "653120babbe4998e90af3ff1",
+//     "title": "Trà Sữa",
+//     "value": "tra_sua",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039370/hpc_food_2.0/veafynmc0stdwua7frhg.png",
+//     "__v": 0
+//   },
+//   {
+//     "_id": "65310efb81e4d98d60b093c3",
+//     "title": "Gà Rán",
+//     "value": "ga_ran",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039370/hpc_food_2.0/mmyex8fgdnis4prp1scx.png",
+//     "__v": 0
+//   },
+//   {
+//     "_id": "6531213dbbe4998e90af4003",
+//     "title": "Nem Rán",
+//     "value": "nem_ran",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039371/hpc_food_2.0/ztlfcwrgww2xsigbvhum.png",
+//     "createdAt": "2024-10-26T16:12:23.571Z",
+//     "updatedAt": "2024-10-26T16:12:23.571Z",
+//     "__v": 0
+//   },
+//   {
+//     "_id": "6531214cbbe4998e90af4005",
+//     "title": "Kem",
+//     "value": "kem",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039370/hpc_food_2.0/on0qfcprhbfeawmrxslq.png",
+//     "createdAt": "2024-10-26T16:12:23.571Z",
+//     "updatedAt": "2024-10-26T16:12:23.571Z",
+//     "__v": 0
+//   },
+//   {
+//     "_id": "653120e1bbe4998e90af3ff3",
+//     "title": "Khác",
+//     "value": "khac",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730039371/hpc_food_2.0/qx0ljqzgqjfyqp35fd6n.png",
+//     "__v": 0
+//   }
+// ];
 
-List<dynamic> restaurants = [
-  {
-    "_id": "6530ebbcc9e72013e5b65933",
-    "title": "Canteen KFC HPC",
-    "time": "7:00am - 7:00pm",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730042784/gho8g5sfocorzltmrdsj.jpg",
-    "owner": "Nguyễn Văn A",
-    "code": "100001",
-    "logoUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730042784/ncr37degdbsaie3t2tw2.png",
-    "rating": 4.8,
-    "ratingCount": "1050",
-    "description": {
-      "id": "2001",
-      "latitude": 20.9486419,
-      "longitude": 105.8212185,
-      "address": "Tam Hiệp, Thanh Trì, Hà Nội, Việt Nam",
-      "title": "Canteen 1 HPC",
-      "latitudeDelta": 0.0122,
-      "longitudeDelta": 0.0221
-    }
-  },
-  {
-    "_id": "6530eb23c9e72013e5b6592f",
-    "title": "Starbucks Tea & Coffee",
-    "time": "8:00am - 8:00pm",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730042784/gav2dbo97fnthaxj0t5x.jpg",
-    "owner": "Nguyễn Văn B",
-    "code": "100002",
-    "logoUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730042784/n1ozxqyx33nqvf55dfx0.png",
-    "rating": 4.0,
-    "ratingCount": "2000",
-    "description": {
-      "id": "2002",
-      "latitude": 20.9481669,
-      "longitude": 105.8209399,
-      "address": "Tam Hiệp, Thanh Trì, Hà Nội, Việt Nam",
-      "title": "Green Tea & Coffee",
-      "latitudeDelta": 0.0122,
-      "longitudeDelta": 0.0221
-    }
-  },
-  {
-    "_id": "6530eb23c9e72013e5b6594e",
-    "title": "Canteen McDonald HPC",
-    "time": "7:00am - 8:00pm",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730042785/yg6mbchsg93aqqqqqzdn.jpg",
-    "owner": "Nguyễn Văn C",
-    "code": "100003",
-    "logoUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730042784/jlntvuh0fcxg86e8ohgg.png",
-    "rating": 4.3,
-    "ratingCount": "3000",
-    "description": {
-      "id": "2003",
-      "latitude": 20.9469381,
-      "longitude": 105.8205563,
-      "address": "Tam Hiệp, Thanh Trì, Hà Nội, Việt Nam",
-      "title": "Canteen 2 HPC",
-      "latitudeDelta": 0.0122,
-      "longitudeDelta": 0.0221
-    }
-  },
-  {
-    "_id": "6530eb23c9e72013e5b65950",
-    "title": "DingTea Văn Điển",
-    "time": "9:00am - 10:00pm",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103140/z9cikinb94oecivl499v.jpg",
-    "owner": "Nguyễn Văn D",
-    "code": "100004",
-    "logoUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103139/prf0z2ulmwoixjybt9yz.jpg",
-    "rating": 4.5,
-    "ratingCount": "1500",
-    "description": {
-      "id": "2004",
-      "latitude": 20.9493189,
-      "longitude": 105.8448792,
-      "address": "267 Đ. Ngọc Hồi, Văn Điển, Thanh Trì, Hà Nội, Việt Nam",
-      "title": "DingTea Văn Điển",
-      "latitudeDelta": 0.0122,
-      "longitudeDelta": 0.0221
-    }
-  },
-  {
-    "_id": "6530eb23c9e72013e5b65951",
-    "title": "Pizza Domino",
-    "time": "10:00am - 11:00pm",
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103139/dl9wqrb0b5yqromatlv7.jpg",
-    "owner": "Nguyễn Văn E",
-    "code": "100005",
-    "logoUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103138/sabfwzs40ecvmuq6zxyt.png",
-    "rating": 4.7,
-    "ratingCount": "1800",
-    "description": {
-      "id": "2005",
-      "latitude": 20.9562045,
-      "longitude": 105.8085151,
-      "address": "P612 Ct 10b, chung cư đại thanh, Thanh Trì, Hà Nội, Việt Nam",
-      "title": "Pizza Domino HPC",
-      "latitudeDelta": 0.0122,
-      "longitudeDelta": 0.0221
-    }
-  }
-];
+// List<dynamic> restaurants = [
+//   {
+//     "_id": "6530ebbcc9e72013e5b65933",
+//     "title": "Canteen KFC HPC",
+//     "time": "7:00am - 7:00pm",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730042784/gho8g5sfocorzltmrdsj.jpg",
+//     "owner": "Nguyễn Văn A",
+//     "logoUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730042784/ncr37degdbsaie3t2tw2.png",
+//     "rating": 4.8,
+//     "ratingCount": "1050",
+//     "description": {
+//       "id": "2001",
+//       "latitude": 20.9486419,
+//       "longitude": 105.8212185,
+//       "address": "Tam Hiệp, Thanh Trì, Hà Nội, Việt Nam",
+//       "title": "Canteen 1 HPC",
+//       "latitudeDelta": 0.0122,
+//       "longitudeDelta": 0.0221
+//     }
+//   },
+//   {
+//     "_id": "6530eb23c9e72013e5b6592f",
+//     "title": "Starbucks Tea & Coffee",
+//     "time": "8:00am - 8:00pm",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730042784/gav2dbo97fnthaxj0t5x.jpg",
+//     "owner": "Nguyễn Văn B",
+//     "logoUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730042784/n1ozxqyx33nqvf55dfx0.png",
+//     "rating": 4.0,
+//     "ratingCount": "2000",
+//     "description": {
+//       "id": "2002",
+//       "latitude": 20.9481669,
+//       "longitude": 105.8209399,
+//       "address": "Tam Hiệp, Thanh Trì, Hà Nội, Việt Nam",
+//       "title": "Green Tea & Coffee",
+//       "latitudeDelta": 0.0122,
+//       "longitudeDelta": 0.0221
+//     }
+//   },
+//   {
+//     "_id": "6530eb23c9e72013e5b6594e",
+//     "title": "Canteen McDonald HPC",
+//     "time": "7:00am - 8:00pm",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730042785/yg6mbchsg93aqqqqqzdn.jpg",
+//     "owner": "Nguyễn Văn C",
+//     "logoUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730042784/jlntvuh0fcxg86e8ohgg.png",
+//     "rating": 4.3,
+//     "ratingCount": "3000",
+//     "description": {
+//       "id": "2003",
+//       "latitude": 20.9469381,
+//       "longitude": 105.8205563,
+//       "address": "Tam Hiệp, Thanh Trì, Hà Nội, Việt Nam",
+//       "title": "Canteen 2 HPC",
+//       "latitudeDelta": 0.0122,
+//       "longitudeDelta": 0.0221
+//     }
+//   },
+//   {
+//     "_id": "6530eb23c9e72013e5b65950",
+//     "title": "DingTea Văn Điển",
+//     "time": "9:00am - 10:00pm",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103140/z9cikinb94oecivl499v.jpg",
+//     "owner": "Nguyễn Văn D",
+//     "logoUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103139/prf0z2ulmwoixjybt9yz.jpg",
+//     "rating": 4.5,
+//     "ratingCount": "1500",
+//     "description": {
+//       "id": "2004",
+//       "latitude": 20.9493189,
+//       "longitude": 105.8448792,
+//       "address": "267 Đ. Ngọc Hồi, Văn Điển, Thanh Trì, Hà Nội, Việt Nam",
+//       "title": "DingTea Văn Điển",
+//       "latitudeDelta": 0.0122,
+//       "longitudeDelta": 0.0221
+//     }
+//   },
+//   {
+//     "_id": "6530eb23c9e72013e5b65951",
+//     "title": "Pizza Domino",
+//     "time": "10:00am - 11:00pm",
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103139/dl9wqrb0b5yqromatlv7.jpg",
+//     "owner": "Nguyễn Văn E",
+//     "logoUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103138/sabfwzs40ecvmuq6zxyt.png",
+//     "rating": 4.7,
+//     "ratingCount": "1800",
+//     "description": {
+//       "id": "2005",
+//       "latitude": 20.9562045,
+//       "longitude": 105.8085151,
+//       "address": "P612 Ct 10b, chung cư đại thanh, Thanh Trì, Hà Nội, Việt Nam",
+//       "title": "Pizza Domino HPC",
+//       "latitudeDelta": 0.0122,
+//       "longitudeDelta": 0.0221
+//     }
+//   }
+// ];
 
 List<Map<String, dynamic>> foods = [
   {
@@ -190,7 +185,6 @@ List<Map<String, dynamic>> foods = [
     "title": "Cơm Chiên Dương Châu",
     "foodTags": ["Cơm", "Chiên", "Trứng", "Thịt", "Ngon"],
     "foodType": ["Main Course", "Lunch", "Dinner"],
-    "code": "200001",
     "isAvailable": true,
     "restaurant": "6530ebbcc9e72013e5b65933",
     "rating": 3.9,
@@ -214,9 +208,8 @@ List<Map<String, dynamic>> foods = [
     "title": "Phở Bò Đặc Biệt",
     "foodTags": ["Phở", "Bò", "Nước", "Truyền thống"],
     "foodType": ["Main Course", "Lunch", "Dinner"],
-    "code": "200002",
     "isAvailable": true,
-    "restaurant": "6530eb23c9e72013e5b6592f",
+    "restaurant": "6530eb23c9e72013e5b6594e",
     "rating": 4.8,
     "ratingCount": "800",
     "description":
@@ -237,7 +230,6 @@ List<Map<String, dynamic>> foods = [
     "title": "Bánh Mì Thịt Nướng",
     "foodTags": ["Bánh Mì", "Thịt Nướng", "Ngon", "Món Nhanh"],
     "foodType": ["Snack", "Breakfast", "Lunch"],
-    "code": "200003",
     "isAvailable": true,
     "restaurant": "6530ebbcc9e72013e5b65933",
     "rating": 2.7,
@@ -259,9 +251,8 @@ List<Map<String, dynamic>> foods = [
     "title": "Trà Sữa Trân Châu",
     "foodTags": ["Trà", "Sữa", "Trân Châu", "Ngọt"],
     "foodType": ["Drink", "Snack"],
-    "code": "200004",
     "isAvailable": true,
-    "restaurant": "6530eb23c9e72013e5b6594e",
+    "restaurant": "6530eb23c9e72013e5b6592f",
     "rating": 1.5,
     "ratingCount": "700",
     "description": "Trà sữa ngọt lịm với trân châu mềm dai.",
@@ -281,7 +272,6 @@ List<Map<String, dynamic>> foods = [
     "title": "Kem Vani",
     "foodTags": ["Kem", "Vani", "Tráng Miệng", "Ngọt"],
     "foodType": ["Dessert"],
-    "code": "200005",
     "isAvailable": true,
     "restaurant": "6530eb23c9e72013e5b65933",
     "rating": 2.9,
@@ -303,7 +293,6 @@ List<Map<String, dynamic>> foods = [
     "title": "Trà Sữa Đặc Biệt",
     "foodTags": ["Trà", "Sữa", "Trân Châu", "Đặc Biệt"],
     "foodType": ["Drink", "Snack"],
-    "code": "200006",
     "isAvailable": true,
     "restaurant": "6530eb23c9e72013e5b65950",
     "rating": 4.6,
@@ -326,7 +315,6 @@ List<Map<String, dynamic>> foods = [
     "title": "Pizza Hải Sản",
     "foodTags": ["Pizza", "Hải Sản", "Phô Mai", "Món Tây"],
     "foodType": ["Main Course", "Dinner"],
-    "code": "200007",
     "isAvailable": true,
     "restaurant": "6530eb23c9e72013e5b65951",
     "rating": 4.7,
@@ -349,7 +337,6 @@ List<Map<String, dynamic>> foods = [
     "title": "Pizza Bò BBQ",
     "foodTags": ["Pizza", "Bò", "BBQ", "Phô Mai"],
     "foodType": ["Main Course", "Dinner"],
-    "code": "200008",
     "isAvailable": true,
     "restaurant": "6530eb23c9e72013e5b65951",
     "rating": 4.8,

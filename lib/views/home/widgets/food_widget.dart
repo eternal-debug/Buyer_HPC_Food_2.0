@@ -28,8 +28,8 @@ class FoodWidget extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(right: 12.w),
         child: Container(
-          width: width * .75,
-          height: 205.h,
+          width: width * 0.8,
+          height: 230.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.r),
             color: cLightWhite,
@@ -42,7 +42,7 @@ class FoodWidget extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12.r),
                   child: SizedBox(
-                    height: 140.h,
+                    height: 160.h,
                     width: width * 0.8,
                     child: Image.network(
                       image,
@@ -63,13 +63,13 @@ class FoodWidget extends StatelessWidget {
                           width: 160.w,
                           child: ReusableText(
                             text: title,
-                            style: appStyle(12, cDark, FontWeight.w500),
+                            style: appStyle(16, cDark, FontWeight.w500),
                           ),
                         ),
                         ReusableText(
                           text:
                               '${NumberFormat.currency(locale: 'vi', symbol: '').format(price).replaceAll(',', '.')}đ',
-                          style: appStyle(15, cPrimary, FontWeight.w600),
+                          style: appStyle(16, cPrimary, FontWeight.w600),
                         ),
                       ],
                     ),
@@ -78,11 +78,11 @@ class FoodWidget extends StatelessWidget {
                       children: [
                         ReusableText(
                           text: 'Thời gian chế biến',
-                          style: appStyle(9, cGray, FontWeight.w500),
+                          style: appStyle(10, cGray, FontWeight.w600),
                         ),
                         ReusableText(
                           text: '~$time phút',
-                          style: appStyle(9, cDark, FontWeight.w500),
+                          style: appStyle(10, cDark, FontWeight.bold),
                         ),
                       ],
                     ),

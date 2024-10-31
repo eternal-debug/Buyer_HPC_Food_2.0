@@ -13,7 +13,6 @@ class CustomAppBar extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       width: width,
       height: 110.h,
-      color: cOffWhite,
       child: Container(
         margin: EdgeInsets.only(top: 20.h),
         child: Row(
@@ -24,8 +23,8 @@ class CustomAppBar extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 CircleAvatar(
-                  radius: 25.r,
-                  backgroundColor: cSecondary,
+                  radius: 30.r,
+                  backgroundColor: cGrayLight,
                   backgroundImage: const NetworkImage(
                       'https://i.pinimg.com/736x/83/ce/80/83ce8048cba3acd196ce2db255e9c53a.jpg'),
                 ),
@@ -36,21 +35,27 @@ class CustomAppBar extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ReusableText(
-                        text: 'Địa chỉ của bạn',
-                        style: appStyle(13, cSecondary, FontWeight.w600),
+                        text: 'Xin chào, User',
+                        style: appStyle(20, cOffWhite, FontWeight.bold),
                       ),
                       SizedBox(
-                        width: width * 0.65,
+                        width: width * .6,
                         child: Text(
-                          'Nguyễn Văn A, Phòng 504, Tòa nhà A',
+                          'Hôm nay bạn muốn ăn gì 😊',
                           overflow: TextOverflow.ellipsis,
-                          style: appStyle(11, cGray, FontWeight.normal),
+                          style: appStyle(12, cWhite, FontWeight.normal),
                         ),
                       ),
                     ],
                   ),
                 ),
-                Text(getTimeOfDay(), style: const TextStyle(fontSize: 35))
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Text(
+                    getTimeOfDay(),
+                    style: const TextStyle(fontSize: 40),
+                  ),
+                )
               ],
             ),
           ],

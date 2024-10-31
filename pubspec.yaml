@@ -60,6 +60,7 @@ dependencies:
   firebase_core: ^3.6.0
   country_picker: ^2.0.26
   intl: ^0.19.0
+  phone_otp_verification: ^1.0.3
 
 dev_dependencies:
   flutter_test:
