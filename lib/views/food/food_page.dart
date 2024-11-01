@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hpc_food/auth/phone_verification_page.dart';
 import 'package:hpc_food/common/app_style.dart';
 import 'package:hpc_food/common/custom_button.dart';
 import 'package:hpc_food/common/custom_text_field.dart';
 import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/constants/constants.dart';
-import 'package:hpc_food/controller/food_controller.dart';
+import 'package:hpc_food/controllers/food_controller.dart';
 import 'package:hpc_food/hooks/fetch_restaurants.dart';
-import 'package:hpc_food/model/foods_model.dart';
+import 'package:hpc_food/models/foods_model.dart';
 import 'package:hpc_food/views/restaurant/restaurant_page.dart';
 import 'package:intl/intl.dart';
 
@@ -26,12 +25,19 @@ class FoodPage extends StatefulHookWidget {
 
 class _FoodPageState extends State<FoodPage> {
   final TextEditingController _preferences = TextEditingController();
+  final controller = Get.put(FoodController());
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      controller.loadAdditives(widget.food.additives);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     final hookResult = useFetchRestaurantsById(widget.food.restaurant);
-    final controller = Get.put(FoodController());
-    controller.loadAdditives(widget.food.additives);
     return Scaffold(
       body: ListView(
         padding: EdgeInsets.zero,
@@ -357,7 +363,7 @@ class _FoodPageState extends State<FoodPage> {
                     btnHeight: 40.h,
                     btnFontSite: 14.sp,
                     onTap: () {
-                      Get.to(() => const PhoneVerificationPage());
+                      // Get.to(() => const PhoneVerificationPage());
                     },
                   ),
                 ],

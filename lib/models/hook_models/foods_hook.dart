@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hpc_food/model/foods_model.dart';
+import 'package:hpc_food/models/foods_model.dart';
 
 class FetchFoods {
   final List<FoodsModel> data;

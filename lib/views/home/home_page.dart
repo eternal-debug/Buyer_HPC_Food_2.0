@@ -5,7 +5,7 @@ import 'package:hpc_food/common/custom_appbar.dart';
 import 'package:hpc_food/common/custom_container.dart';
 import 'package:hpc_food/common/heading.dart';
 import 'package:hpc_food/constants/constants.dart';
-import 'package:hpc_food/controller/category_controller.dart';
+import 'package:hpc_food/controllers/category_controller.dart';
 import 'package:hpc_food/views/home/all_fastest_foods.dart';
 import 'package:hpc_food/views/home/all_nearby_restaurants.dart';
 import 'package:hpc_food/views/home/recommendations.dart';
@@ -68,6 +68,7 @@ class HomePage extends StatelessWidget {
                             },
                           ),
                           const NearbyRestaurantsList(),
+                          SizedBox(height: 16.h)
                         ],
                       )
                     : CustomContainer(

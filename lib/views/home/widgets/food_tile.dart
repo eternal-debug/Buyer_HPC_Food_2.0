@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:hpc_food/common/app_style.dart';
 import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/constants/constants.dart';
-import 'package:hpc_food/model/foods_model.dart';
+import 'package:hpc_food/models/foods_model.dart';
 import 'package:hpc_food/views/food/food_page.dart';
 import 'package:intl/intl.dart';
 

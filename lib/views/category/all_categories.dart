@@ -7,7 +7,7 @@ import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/common/shimmers/foodlist_shimmer.dart';
 import 'package:hpc_food/constants/constants.dart';
 import 'package:hpc_food/hooks/fetch_all_categories.dart';
-import 'package:hpc_food/model/categories_model.dart';
+import 'package:hpc_food/models/categories_model.dart';
 import 'package:hpc_food/views/category/widgets/category_tile.dart';
 
 class AllCategories extends HookWidget {

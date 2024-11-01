@@ -57,3 +57,9 @@ final List<String> verificationReasons = [
   'Dễ dàng thay đổi: Xử lý các vấn đề nhanh chóng qua một cuộc gọi.',
   'Ưu đãi đặc biệt: Nhận thông tin về các khuyến mãi và ưu đãi hấp dẫn.'
 ];
+
+final assets = [
+  'assets/anime/cooking-2.json',
+  'assets/anime/cooking-3.json',
+  'assets/anime/cooking-4.json',
+];

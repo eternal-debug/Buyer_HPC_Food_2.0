@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hpc_food/common/shimmers/nearby_shimmer.dart';
 import 'package:hpc_food/hooks/fetch_all_restaurants.dart';
-import 'package:hpc_food/model/restaurants_model.dart';
+import 'package:hpc_food/models/restaurants_model.dart';
 import 'package:hpc_food/views/home/widgets/restaurant_widget.dart';
 import 'package:hpc_food/views/restaurant/restaurant_page.dart';
 

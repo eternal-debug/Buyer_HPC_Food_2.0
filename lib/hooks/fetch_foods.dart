@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hpc_food/constants/constants.dart';
-import 'package:hpc_food/model/api_error.dart';
-import 'package:hpc_food/model/foods_model.dart';
-import 'package:hpc_food/model/hook_models/foods_hook.dart';
+import 'package:hpc_food/models/api_error.dart';
+import 'package:hpc_food/models/foods_model.dart';
+import 'package:hpc_food/models/hook_models/foods_hook.dart';
 import 'package:http/http.dart' as http;
 
 FetchFoods useFetchFoods() {
@@ -10,6 +11,8 @@ FetchFoods useFetchFoods() {
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
   final apiError = useState<ApiError?>(null);
+
+  bool isDisposed = false;
 
   Future<void> fetchData() async {
     isLoading.value = true;
@@ -19,12 +22,16 @@ FetchFoods useFetchFoods() {
       );
 
       if (response.statusCode == 200) {
-        foods.value = foodsModelFromJson(response.body);
+        if (!isDisposed) {
+          foods.value = foodsModelFromJson(response.body);
+        }
       }
     } catch (e) {
-      error.value = e is Exception ? e : Exception(e.toString());
+      debugPrint(e.toString());
     } finally {
-      isLoading.value = false;
+      if (!isDisposed) {
+        isLoading.value = false;
+      }
     }
   }
 
@@ -32,7 +39,9 @@ FetchFoods useFetchFoods() {
     Future.delayed(const Duration(seconds: 3));
     fetchData();
 
-    return null;
+    return () {
+      isDisposed = true;
+    };
   }, []);
 
   void refetch() {

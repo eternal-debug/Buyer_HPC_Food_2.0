@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hpc_food/constants/constants.dart';
-import 'package:hpc_food/model/api_error.dart';
-import 'package:hpc_food/model/foods_model.dart';
+import 'package:hpc_food/models/api_error.dart';
+import 'package:hpc_food/models/foods_model.dart';
 import 'package:http/http.dart' as http;
 
 class SearchFoodController extends GetxController {

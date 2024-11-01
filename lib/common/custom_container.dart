@@ -7,7 +7,7 @@ import 'package:hpc_food/constants/constants.dart';
 class CustomContainer extends StatelessWidget {
   CustomContainer({
     super.key,
-    required this.height,
+    this.height,
     required this.containerContent,
     this.color,
   });

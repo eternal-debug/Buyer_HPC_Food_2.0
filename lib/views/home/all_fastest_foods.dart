@@ -7,7 +7,7 @@ import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/common/shimmers/shimmer_widget.dart';
 import 'package:hpc_food/constants/constants.dart';
 import 'package:hpc_food/hooks/fetch_foods.dart';
-import 'package:hpc_food/model/foods_model.dart';
+import 'package:hpc_food/models/foods_model.dart';
 import 'package:hpc_food/views/home/widgets/food_tile.dart';
 
 class AllFastestFoods extends HookWidget {

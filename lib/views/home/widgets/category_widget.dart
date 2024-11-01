@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 import 'package:hpc_food/common/app_style.dart';
 import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/constants/constants.dart';
-import 'package:hpc_food/controller/category_controller.dart';
-import 'package:hpc_food/model/categories_model.dart';
+import 'package:hpc_food/controllers/category_controller.dart';
+import 'package:hpc_food/models/categories_model.dart';
 import 'package:hpc_food/views/category/all_categories.dart';
 
 class CategoryWidget extends StatelessWidget {

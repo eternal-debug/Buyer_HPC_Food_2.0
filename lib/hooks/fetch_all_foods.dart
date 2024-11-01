@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hpc_food/constants/constants.dart';
-import 'package:hpc_food/model/api_error.dart';
-import 'package:hpc_food/model/foods_model.dart';
-import 'package:hpc_food/model/hook_models/hook_result.dart';
+import 'package:hpc_food/models/api_error.dart';
+import 'package:hpc_food/models/foods_model.dart';
+import 'package:hpc_food/models/hook_models/hook_result.dart';
 import 'package:http/http.dart' as http;
 
 FetchHook useFetchAllFoods() {
@@ -10,6 +11,7 @@ FetchHook useFetchAllFoods() {
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
   final apiError = useState<ApiError?>(null);
+  bool isDisposed = false;
 
   Future<void> fetchData() async {
     isLoading.value = true;
@@ -17,27 +19,40 @@ FetchHook useFetchAllFoods() {
       final response = await http.get(Uri.parse('$appBaseUrl/api/foods/all'));
       if (response.statusCode == 200) {
         final parsedData = foodsModelFromJson(response.body);
-        foods.value = parsedData;
+        if (!isDisposed) {
+          foods.value = parsedData;
+        }
       } else if (response.statusCode >= 400 && response.statusCode < 600) {
-        apiError.value = apiErrorFromJson(response.body);
+        if (!isDisposed) {
+          apiError.value = apiErrorFromJson(response.body);
+        }
       } else {
-        error.value = Exception(response.statusCode);
+        if (!isDisposed) {
+          error.value = Exception(response.statusCode);
+        }
       }
     } catch (e) {
-      error.value = e is Exception ? e : Exception(e.toString());
+      debugPrint(e.toString());
     } finally {
-      isLoading.value = false;
+      if (!isDisposed) {
+        isLoading.value = false;
+      }
     }
   }
 
   useEffect(() {
     fetchData();
-    return null;
+
+    return () {
+      isDisposed = true;
+    };
   }, []);
 
   void refetch() {
-    isLoading.value = true;
-    fetchData();
+    if (!isDisposed) {
+      isLoading.value = true;
+      fetchData();
+    }
   }
 
   return FetchHook(

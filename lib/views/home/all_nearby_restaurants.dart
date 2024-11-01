@@ -7,7 +7,7 @@ import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/common/shimmers/shimmer_widget.dart';
 import 'package:hpc_food/constants/constants.dart';
 import 'package:hpc_food/hooks/fetch_all_restaurants.dart';
-import 'package:hpc_food/model/restaurants_model.dart';
+import 'package:hpc_food/models/restaurants_model.dart';
 import 'package:hpc_food/views/home/widgets/restaurant_tile.dart';
 
 class AllNearbyRestaurants extends HookWidget {

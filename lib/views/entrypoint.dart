@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:get/get.dart';
 import 'package:hpc_food/constants/constants.dart';
-import 'package:hpc_food/controller/tab_index_controller.dart';
+import 'package:hpc_food/controllers/tab_index_controller.dart';
 import 'package:hpc_food/views/cart/cart_page.dart';
 import 'package:hpc_food/views/home/home_page.dart';
 import 'package:hpc_food/views/profile/profile_page.dart';

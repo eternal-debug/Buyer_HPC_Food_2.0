@@ -7,9 +7,9 @@ import 'package:hpc_food/common/background_container.dart';
 import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/common/shimmers/foodlist_shimmer.dart';
 import 'package:hpc_food/constants/constants.dart';
-import 'package:hpc_food/controller/category_controller.dart';
+import 'package:hpc_food/controllers/category_controller.dart';
 import 'package:hpc_food/hooks/fetch_foods_by_category.dart';
-import 'package:hpc_food/model/foods_model.dart';
+import 'package:hpc_food/models/foods_model.dart';
 import 'package:hpc_food/views/home/widgets/food_tile.dart';
 
 class CategoryPage extends HookWidget {

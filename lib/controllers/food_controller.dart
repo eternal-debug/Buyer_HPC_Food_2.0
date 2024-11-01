@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:hpc_food/model/addictive_obs.dart';
-import 'package:hpc_food/model/foods_model.dart';
+import 'package:hpc_food/models/addictive_obs.dart';
+import 'package:hpc_food/models/foods_model.dart';
 
 class FoodController extends GetxController {
   RxInt currrentPage = 0.obs;

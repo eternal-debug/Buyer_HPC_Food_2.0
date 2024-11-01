@@ -4,11 +4,12 @@ import 'package:hpc_food/constants/constants.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ShimmerWidget extends StatelessWidget {
-  const ShimmerWidget(
-      {super.key,
-      required this.shimmerWidth,
-      required this.shimmerHeight,
-      required this.shimmerRadius});
+  const ShimmerWidget({
+    super.key,
+    required this.shimmerWidth,
+    required this.shimmerHeight,
+    required this.shimmerRadius,
+  });
 
   final double shimmerWidth;
   final double shimmerHeight;
@@ -29,7 +30,7 @@ class ShimmerWidget extends StatelessWidget {
       {required double height, required double width, required double radius}) {
     return Shimmer.fromColors(
       baseColor: Colors.grey[300]!,
-      highlightColor: cSecondaryLight,
+      highlightColor: cGrayLight,
       child: Container(
         height: height,
         width: width,

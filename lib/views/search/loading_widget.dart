@@ -8,10 +8,6 @@ class LoadingWidget extends StatelessWidget {
   const LoadingWidget({super.key});
 
   String _getRandomLottieAsset() {
-    final assets = [
-      "assets/anime/cooking-1.json",
-      "assets/anime/cooking-2.json",
-    ];
     final randomIndex = Random().nextInt(assets.length);
     return assets[randomIndex];
   }

@@ -179,182 +179,182 @@
 //   }
 // ];
 
-List<Map<String, dynamic>> foods = [
-  {
-    "_id": "6531ebbcc9e72013e5b65930",
-    "title": "Cơm Chiên Dương Châu",
-    "foodTags": ["Cơm", "Chiên", "Trứng", "Thịt", "Ngon"],
-    "foodType": ["Main Course", "Lunch", "Dinner"],
-    "isAvailable": true,
-    "restaurant": "6530ebbcc9e72013e5b65933",
-    "rating": 3.9,
-    "ratingCount": "520",
-    "description":
-        "Món cơm chiên truyền thống với trứng, thịt và rau củ tươi ngon.",
-    "price": 49000,
-    "additives": [
-      {"id": 1, "title": "Thịt Nướng", "price": 15000},
-      {"id": 2, "title": "Trứng Chiên", "price": 10000},
-      {"id": 3, "title": "Đậu Hà Lan", "price": 5000}
-    ],
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049911/rvkxprrgun17c53laii4.jpg",
-    "__v": 0,
-    "category": "6537ece708ff5b7de97d0695",
-    "time": "20"
-  },
-  {
-    "_id": "6531ebbcc9e72013e5b65931",
-    "title": "Phở Bò Đặc Biệt",
-    "foodTags": ["Phở", "Bò", "Nước", "Truyền thống"],
-    "foodType": ["Main Course", "Lunch", "Dinner"],
-    "isAvailable": true,
-    "restaurant": "6530eb23c9e72013e5b6594e",
-    "rating": 4.8,
-    "ratingCount": "800",
-    "description":
-        "Phở bò truyền thống với nước dùng thơm ngon và bánh phở tươi.",
-    "price": 79000,
-    "additives": [
-      {"id": 4, "title": "Thịt Bò Thêm", "price": 30000},
-      {"id": 5, "title": "Rau Thơm", "price": 10000}
-    ],
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049912/ljo9phqrtcwg9hp7vebx.jpg",
-    "__v": 0,
-    "category": "65310f3381e4d98d60b093c5",
-    "time": "15"
-  },
-  {
-    "_id": "6531ebbcc9e72013e5b65932",
-    "title": "Bánh Mì Thịt Nướng",
-    "foodTags": ["Bánh Mì", "Thịt Nướng", "Ngon", "Món Nhanh"],
-    "foodType": ["Snack", "Breakfast", "Lunch"],
-    "isAvailable": true,
-    "restaurant": "6530ebbcc9e72013e5b65933",
-    "rating": 2.7,
-    "ratingCount": "600",
-    "description": "Bánh mì với thịt nướng thơm lừng và rau sống tươi ngon.",
-    "price": 20000,
-    "additives": [
-      {"id": 6, "title": "Pate Thêm", "price": 5000},
-      {"id": 7, "title": "Rau Thêm", "price": 3000}
-    ],
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049911/lmvpuytgphlnxaurwfrr.jpg",
-    "__v": 0,
-    "category": "6531206cbbe4998e90af3feb",
-    "time": "10"
-  },
-  {
-    "_id": "6531ebbcc9e72013e5b65933",
-    "title": "Trà Sữa Trân Châu",
-    "foodTags": ["Trà", "Sữa", "Trân Châu", "Ngọt"],
-    "foodType": ["Drink", "Snack"],
-    "isAvailable": true,
-    "restaurant": "6530eb23c9e72013e5b6592f",
-    "rating": 1.5,
-    "ratingCount": "700",
-    "description": "Trà sữa ngọt lịm với trân châu mềm dai.",
-    "price": 25000,
-    "additives": [
-      {"id": 8, "title": "Thêm Trân Châu", "price": 5000},
-      {"id": 9, "title": "Thêm Sữa", "price": 5000}
-    ],
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049912/ljqsoqbywmf8b8aujlts.jpg",
-    "__v": 0,
-    "category": "653120babbe4998e90af3ff1",
-    "time": "5"
-  },
-  {
-    "_id": "6531ebbcc9e72013e5b65934",
-    "title": "Kem Vani",
-    "foodTags": ["Kem", "Vani", "Tráng Miệng", "Ngọt"],
-    "foodType": ["Dessert"],
-    "isAvailable": true,
-    "restaurant": "6530eb23c9e72013e5b65933",
-    "rating": 2.9,
-    "ratingCount": "450",
-    "description": "Kem vani mát lạnh, ngon ngọt hoàn hảo cho ngày hè.",
-    "price": 10000,
-    "additives": [
-      {"id": 10, "title": "Thêm Si-rô Sô-Cô-La", "price": 3000},
-      {"id": 11, "title": "Thêm Đậu Phộng", "price": 2000}
-    ],
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049912/xwjel1wlsnwnpjtq7fhw.jpg",
-    "__v": 0,
-    "category": "6531214cbbe4998e90af4005",
-    "time": "2"
-  },
-  {
-    "_id": "6531ebbcc9e72013e5b65935",
-    "title": "Trà Sữa Đặc Biệt",
-    "foodTags": ["Trà", "Sữa", "Trân Châu", "Đặc Biệt"],
-    "foodType": ["Drink", "Snack"],
-    "isAvailable": true,
-    "restaurant": "6530eb23c9e72013e5b65950",
-    "rating": 4.6,
-    "ratingCount": "1300",
-    "description":
-        "Trà sữa với công thức đặc biệt, trân châu giòn dai hấp dẫn.",
-    "price": 35000,
-    "additives": [
-      {"id": 12, "title": "Thêm Trân Châu Đen", "price": 5000},
-      {"id": 13, "title": "Thêm Thạch Phô Mai", "price": 5000}
-    ],
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103888/sz9ng5d7qkgeunlyrrek.jpg",
-    "__v": 0,
-    "category": "653120babbe4998e90af3ff1",
-    "time": "7"
-  },
-  {
-    "_id": "6531ebbcc9e72013e5b65936",
-    "title": "Pizza Hải Sản",
-    "foodTags": ["Pizza", "Hải Sản", "Phô Mai", "Món Tây"],
-    "foodType": ["Main Course", "Dinner"],
-    "isAvailable": true,
-    "restaurant": "6530eb23c9e72013e5b65951",
-    "rating": 4.7,
-    "ratingCount": "1100",
-    "description":
-        "Pizza với hải sản tươi ngon, phô mai béo ngậy và lớp vỏ giòn.",
-    "price": 150000,
-    "additives": [
-      {"id": 14, "title": "Thêm Phô Mai", "price": 30000},
-      {"id": 15, "title": "Thêm Xúc Xích", "price": 30000}
-    ],
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103888/s4fwd8zmynjyga5gqfcu.webp",
-    "__v": 0,
-    "category": "653120e1bbe4998e90af3ff3",
-    "time": "20"
-  },
-  {
-    "_id": "6531ebbcc9e72013e5b65937",
-    "title": "Pizza Bò BBQ",
-    "foodTags": ["Pizza", "Bò", "BBQ", "Phô Mai"],
-    "foodType": ["Main Course", "Dinner"],
-    "isAvailable": true,
-    "restaurant": "6530eb23c9e72013e5b65951",
-    "rating": 4.8,
-    "ratingCount": "1400",
-    "description":
-        "Pizza với thịt bò nướng BBQ, kết hợp với sốt thơm ngon và phô mai béo ngậy.",
-    "price": 165000,
-    "additives": [
-      {"id": 16, "title": "Thêm Phô Mai", "price": 30000},
-      {"id": 17, "title": "Thêm Sốt BBQ", "price": 15000}
-    ],
-    "imageUrl":
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103889/txxsa5rhgnvufzsrajvh.jpg",
-    "__v": 0,
-    "category": "653120e1bbe4998e90af3ff3",
-    "time": "25"
-  }
-];
+// List<Map<String, dynamic>> foods = [
+//   {
+//     "_id": "6531ebbcc9e72013e5b65930",
+//     "title": "Cơm Chiên Dương Châu",
+//     "foodTags": ["Cơm", "Chiên", "Trứng", "Thịt", "Ngon"],
+//     "foodType": ["Main Course", "Lunch", "Dinner"],
+//     "isAvailable": true,
+//     "restaurant": "6530ebbcc9e72013e5b65933",
+//     "rating": 3.9,
+//     "ratingCount": "520",
+//     "description":
+//         "Món cơm chiên truyền thống với trứng, thịt và rau củ tươi ngon.",
+//     "price": 49000,
+//     "additives": [
+//       {"id": 1, "title": "Thịt Nướng", "price": 15000},
+//       {"id": 2, "title": "Trứng Chiên", "price": 10000},
+//       {"id": 3, "title": "Đậu Hà Lan", "price": 5000}
+//     ],
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049911/rvkxprrgun17c53laii4.jpg",
+//     "__v": 0,
+//     "category": "6537ece708ff5b7de97d0695",
+//     "time": "20"
+//   },
+//   {
+//     "_id": "6531ebbcc9e72013e5b65931",
+//     "title": "Phở Bò Đặc Biệt",
+//     "foodTags": ["Phở", "Bò", "Nước", "Truyền thống"],
+//     "foodType": ["Main Course", "Lunch", "Dinner"],
+//     "isAvailable": true,
+//     "restaurant": "6530eb23c9e72013e5b6594e",
+//     "rating": 4.8,
+//     "ratingCount": "800",
+//     "description":
+//         "Phở bò truyền thống với nước dùng thơm ngon và bánh phở tươi.",
+//     "price": 79000,
+//     "additives": [
+//       {"id": 4, "title": "Thịt Bò Thêm", "price": 30000},
+//       {"id": 5, "title": "Rau Thơm", "price": 10000}
+//     ],
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049912/ljo9phqrtcwg9hp7vebx.jpg",
+//     "__v": 0,
+//     "category": "65310f3381e4d98d60b093c5",
+//     "time": "15"
+//   },
+//   {
+//     "_id": "6531ebbcc9e72013e5b65932",
+//     "title": "Bánh Mì Thịt Nướng",
+//     "foodTags": ["Bánh Mì", "Thịt Nướng", "Ngon", "Món Nhanh"],
+//     "foodType": ["Snack", "Breakfast", "Lunch"],
+//     "isAvailable": true,
+//     "restaurant": "6530ebbcc9e72013e5b65933",
+//     "rating": 2.7,
+//     "ratingCount": "600",
+//     "description": "Bánh mì với thịt nướng thơm lừng và rau sống tươi ngon.",
+//     "price": 20000,
+//     "additives": [
+//       {"id": 6, "title": "Pate Thêm", "price": 5000},
+//       {"id": 7, "title": "Rau Thêm", "price": 3000}
+//     ],
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049911/lmvpuytgphlnxaurwfrr.jpg",
+//     "__v": 0,
+//     "category": "6531206cbbe4998e90af3feb",
+//     "time": "10"
+//   },
+//   {
+//     "_id": "6531ebbcc9e72013e5b65933",
+//     "title": "Trà Sữa Trân Châu",
+//     "foodTags": ["Trà", "Sữa", "Trân Châu", "Ngọt"],
+//     "foodType": ["Drink", "Snack"],
+//     "isAvailable": true,
+//     "restaurant": "6530eb23c9e72013e5b6592f",
+//     "rating": 1.5,
+//     "ratingCount": "700",
+//     "description": "Trà sữa ngọt lịm với trân châu mềm dai.",
+//     "price": 25000,
+//     "additives": [
+//       {"id": 8, "title": "Thêm Trân Châu", "price": 5000},
+//       {"id": 9, "title": "Thêm Sữa", "price": 5000}
+//     ],
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049912/ljqsoqbywmf8b8aujlts.jpg",
+//     "__v": 0,
+//     "category": "653120babbe4998e90af3ff1",
+//     "time": "5"
+//   },
+//   {
+//     "_id": "6531ebbcc9e72013e5b65934",
+//     "title": "Kem Vani",
+//     "foodTags": ["Kem", "Vani", "Tráng Miệng", "Ngọt"],
+//     "foodType": ["Dessert"],
+//     "isAvailable": true,
+//     "restaurant": "6530eb23c9e72013e5b65933",
+//     "rating": 2.9,
+//     "ratingCount": "450",
+//     "description": "Kem vani mát lạnh, ngon ngọt hoàn hảo cho ngày hè.",
+//     "price": 10000,
+//     "additives": [
+//       {"id": 10, "title": "Thêm Si-rô Sô-Cô-La", "price": 3000},
+//       {"id": 11, "title": "Thêm Đậu Phộng", "price": 2000}
+//     ],
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049912/xwjel1wlsnwnpjtq7fhw.jpg",
+//     "__v": 0,
+//     "category": "6531214cbbe4998e90af4005",
+//     "time": "2"
+//   },
+//   {
+//     "_id": "6531ebbcc9e72013e5b65935",
+//     "title": "Trà Sữa Đặc Biệt",
+//     "foodTags": ["Trà", "Sữa", "Trân Châu", "Đặc Biệt"],
+//     "foodType": ["Drink", "Snack"],
+//     "isAvailable": true,
+//     "restaurant": "6530eb23c9e72013e5b65950",
+//     "rating": 4.6,
+//     "ratingCount": "1300",
+//     "description":
+//         "Trà sữa với công thức đặc biệt, trân châu giòn dai hấp dẫn.",
+//     "price": 35000,
+//     "additives": [
+//       {"id": 12, "title": "Thêm Trân Châu Đen", "price": 5000},
+//       {"id": 13, "title": "Thêm Thạch Phô Mai", "price": 5000}
+//     ],
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103888/sz9ng5d7qkgeunlyrrek.jpg",
+//     "__v": 0,
+//     "category": "653120babbe4998e90af3ff1",
+//     "time": "7"
+//   },
+//   {
+//     "_id": "6531ebbcc9e72013e5b65936",
+//     "title": "Pizza Hải Sản",
+//     "foodTags": ["Pizza", "Hải Sản", "Phô Mai", "Món Tây"],
+//     "foodType": ["Main Course", "Dinner"],
+//     "isAvailable": true,
+//     "restaurant": "6530eb23c9e72013e5b65951",
+//     "rating": 4.7,
+//     "ratingCount": "1100",
+//     "description":
+//         "Pizza với hải sản tươi ngon, phô mai béo ngậy và lớp vỏ giòn.",
+//     "price": 150000,
+//     "additives": [
+//       {"id": 14, "title": "Thêm Phô Mai", "price": 30000},
+//       {"id": 15, "title": "Thêm Xúc Xích", "price": 30000}
+//     ],
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103888/s4fwd8zmynjyga5gqfcu.webp",
+//     "__v": 0,
+//     "category": "653120e1bbe4998e90af3ff3",
+//     "time": "20"
+//   },
+//   {
+//     "_id": "6531ebbcc9e72013e5b65937",
+//     "title": "Pizza Bò BBQ",
+//     "foodTags": ["Pizza", "Bò", "BBQ", "Phô Mai"],
+//     "foodType": ["Main Course", "Dinner"],
+//     "isAvailable": true,
+//     "restaurant": "6530eb23c9e72013e5b65951",
+//     "rating": 4.8,
+//     "ratingCount": "1400",
+//     "description":
+//         "Pizza với thịt bò nướng BBQ, kết hợp với sốt thơm ngon và phô mai béo ngậy.",
+//     "price": 165000,
+//     "additives": [
+//       {"id": 16, "title": "Thêm Phô Mai", "price": 30000},
+//       {"id": 17, "title": "Thêm Sốt BBQ", "price": 15000}
+//     ],
+//     "imageUrl":
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730103889/txxsa5rhgnvufzsrajvh.jpg",
+//     "__v": 0,
+//     "category": "653120e1bbe4998e90af3ff3",
+//     "time": "25"
+//   }
+// ];
 
 const cart = [
   {

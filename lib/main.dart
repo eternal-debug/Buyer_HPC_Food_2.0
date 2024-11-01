@@ -6,7 +6,9 @@ import 'package:hpc_food/views/entrypoint.dart';
 
 Widget defaultHome = MainScreen();
 
-void main() => runApp(const MyApp());
+void main() async {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

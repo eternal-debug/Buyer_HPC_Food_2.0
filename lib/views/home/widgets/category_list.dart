@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hpc_food/common/shimmers/categories_shimmer.dart';
 import 'package:hpc_food/hooks/fetch_categories.dart';
-import 'package:hpc_food/model/categories_model.dart';
+import 'package:hpc_food/models/categories_model.dart';
 import 'package:hpc_food/views/home/widgets/category_widget.dart';
 
 class CategoryList extends HookWidget {
