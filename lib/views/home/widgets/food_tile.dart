@@ -6,10 +6,13 @@ import 'package:get/get.dart';
 import 'package:hpc_food/common/app_style.dart';
 import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/constants/constants.dart';
+import 'package:hpc_food/controllers/cart_controller.dart';
+import 'package:hpc_food/models/cart_request.dart';
 import 'package:hpc_food/models/foods_model.dart';
 import 'package:hpc_food/views/food/food_page.dart';
 import 'package:intl/intl.dart';
 
+// ignore: must_be_immutable
 class FoodTile extends StatelessWidget {
   FoodTile({super.key, required this.food, this.color});
 
@@ -18,6 +21,7 @@ class FoodTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CartController());
     return GestureDetector(
       onTap: () {
         Get.to(() => FoodPage(food: food));
@@ -87,9 +91,13 @@ class FoodTile extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              ReusableText(
-                                text: 'Thời gian chế biến: ~${food.time} phút',
-                                style: appStyle(10, cGray, FontWeight.w500),
+                              SizedBox(
+                                width: 150.w,
+                                child: ReusableText(
+                                  text:
+                                      'Thời gian chế biến: ~${food.time} phút',
+                                  style: appStyle(10, cGray, FontWeight.w500),
+                                ),
                               ),
                               ReusableText(
                                 text:
@@ -144,7 +152,18 @@ class FoodTile extends StatelessWidget {
             right: 4.w,
             top: 10.h,
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                var data = CartRequest(
+                  productId: food.id,
+                  additives: [],
+                  quantity: 1,
+                  totalPrice: food.price,
+                );
+
+                String cart = cartRequestToJson(data);
+                print(cart);
+                controller.addToCart(cart);
+              },
               child: const Center(
                 child: Icon(
                   MaterialCommunityIcons.cart,

@@ -8,8 +8,10 @@ import 'package:hpc_food/common/custom_button.dart';
 import 'package:hpc_food/common/custom_text_field.dart';
 import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/constants/constants.dart';
+import 'package:hpc_food/controllers/cart_controller.dart';
 import 'package:hpc_food/controllers/food_controller.dart';
 import 'package:hpc_food/hooks/fetch_restaurants.dart';
+import 'package:hpc_food/models/cart_request.dart';
 import 'package:hpc_food/models/foods_model.dart';
 import 'package:hpc_food/views/restaurant/restaurant_page.dart';
 import 'package:intl/intl.dart';
@@ -25,13 +27,14 @@ class FoodPage extends StatefulHookWidget {
 
 class _FoodPageState extends State<FoodPage> {
   final TextEditingController _preferences = TextEditingController();
-  final controller = Get.put(FoodController());
+  final foodController = Get.put(FoodController());
+  final cartController = Get.put(CartController());
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      controller.loadAdditives(widget.food.additives);
+      foodController.loadAdditives(widget.food.additives);
     });
   }
 
@@ -81,7 +84,7 @@ class _FoodPageState extends State<FoodPage> {
                       );
                     },
                     btnWidth: 140.w,
-                    text: "Đến trang cửa hàng",
+                    text: 'Đến trang cửa hàng',
                     radius: 100,
                   ),
                 ),
@@ -109,7 +112,7 @@ class _FoodPageState extends State<FoodPage> {
                       Obx(
                         () => ReusableText(
                             text:
-                                '${NumberFormat.currency(locale: 'vi', symbol: '').format((widget.food.price + controller.additivePrice) * controller.count.value).replaceAll(',', '.')} đ',
+                                '${NumberFormat.currency(locale: 'vi', symbol: '').format((widget.food.price + foodController.additivePrice) * foodController.count.value).replaceAll(',', '.')} đ',
                             style: appStyle(20, cPrimary, FontWeight.w600)),
                       )
                     ],
@@ -150,16 +153,16 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   SizedBox(height: 16.h),
                   ReusableText(
-                    text: "Chọn topping",
+                    text: 'Chọn topping',
                     style: appStyle(18, cDark, FontWeight.w600),
                   ),
                   SizedBox(height: 10.h),
                   Obx(
                     () => Column(
                       children: List.generate(
-                        controller.additivesList.length,
+                        foodController.additivesList.length,
                         (index) {
-                          final additive = controller.additivesList[index];
+                          final additive = foodController.additivesList[index];
                           return CheckboxListTile(
                             contentPadding: EdgeInsets.zero,
                             visualDensity: VisualDensity.compact,
@@ -190,7 +193,9 @@ class _FoodPageState extends State<FoodPage> {
                             ),
                             onChanged: (bool? value) {
                               additive.toggleChecked();
-                              controller.getTotalPrice();
+                              foodController.getTotalPrice();
+                              foodController.getCartAdditive();
+                              print(foodController.getCartAdditive());
                             },
                           );
                         },
@@ -211,7 +216,7 @@ class _FoodPageState extends State<FoodPage> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              controller.decrement();
+                              foodController.decrement();
                             },
                             child: const Icon(Icons.remove_circle_outline),
                           ),
@@ -220,13 +225,13 @@ class _FoodPageState extends State<FoodPage> {
                                   const EdgeInsets.symmetric(horizontal: 8.0),
                               child: Obx(
                                 () => ReusableText(
-                                    text: '${controller.count.value}',
+                                    text: '${foodController.count.value}',
                                     style:
                                         appStyle(16, cDark, FontWeight.w600)),
                               )),
                           GestureDetector(
                             onTap: () {
-                              controller.increment();
+                              foodController.increment();
                             },
                             child: const Icon(Icons.add_circle_outline),
                           ),
@@ -257,7 +262,23 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      showVerificationSheet(context);
+                      int price =
+                          (widget.food.price + foodController.additivePrice) *
+                              foodController.count.value;
+
+                      var data = CartRequest(
+                        productId: widget.food.id,
+                        additives: foodController.getCartAdditive(),
+                        quantity: foodController.count.value,
+                        totalPrice: price,
+                        instructions: _preferences.text.isNotEmpty
+                            ? _preferences.text
+                            : null,
+                      );
+
+                      String cart = cartRequestToJson(data);
+
+                      cartController.addToCart(cart);
                     },
                     child: Container(
                       height: 50.h,
@@ -271,7 +292,7 @@ class _FoodPageState extends State<FoodPage> {
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 18.w),
                             child: ReusableText(
-                              text: 'Đặt món',
+                              text: 'Thêm vào giỏ hàng',
                               style: appStyle(18, cLightWhite, FontWeight.w600),
                             ),
                           ),
@@ -301,77 +322,77 @@ class _FoodPageState extends State<FoodPage> {
     );
   }
 
-  Future<dynamic> showVerificationSheet(BuildContext context) {
-    return showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      isScrollControlled: true,
-      showDragHandle: true,
-      builder: (BuildContext context) {
-        return SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.only(
-              bottom: MediaQuery.of(context).viewInsets.bottom,
-            ),
-            decoration: BoxDecoration(
-              image: const DecorationImage(
-                image: AssetImage("assets/images/restaurant_bk.png"),
-                alignment: Alignment.bottomCenter,
-                fit: BoxFit.cover,
-                opacity: 0.15,
-              ),
-              color: cLightWhite,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(12.r),
-                topRight: Radius.circular(12.r),
-              ),
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(8.h),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(height: 10.h),
-                  ReusableText(
-                    text: 'Hãy xác minh số điện thoại của bạn',
-                    style: appStyle(18, cPrimary, FontWeight.w600),
-                  ),
-                  SizedBox(
-                    height: 250.h,
-                    child: ListView.builder(
-                      itemCount: verificationReasons.length,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          leading: const Icon(
-                            Icons.check_circle_outline,
-                            color: cPrimary,
-                          ),
-                          title: Text(
-                            verificationReasons[index],
-                            textAlign: TextAlign.justify,
-                            style: appStyle(12, cDark, FontWeight.normal),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  SizedBox(height: 10.h),
-                  CustomButton(
-                    text: 'Bắt đầu xác minh',
-                    btnWidth: 250.w,
-                    btnHeight: 40.h,
-                    btnFontSite: 14.sp,
-                    onTap: () {
-                      // Get.to(() => const PhoneVerificationPage());
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
-      },
-    );
-  }
+  // Future<dynamic> showVerificationSheet(BuildContext context) {
+  //   return showModalBottomSheet(
+  //     context: context,
+  //     backgroundColor: Colors.transparent,
+  //     isScrollControlled: true,
+  //     showDragHandle: true,
+  //     builder: (BuildContext context) {
+  //       return SingleChildScrollView(
+  //         child: Container(
+  //           padding: EdgeInsets.only(
+  //             bottom: MediaQuery.of(context).viewInsets.bottom,
+  //           ),
+  //           decoration: BoxDecoration(
+  //             image: const DecorationImage(
+  //               image: AssetImage('assets/images/restaurant_bk.png'),
+  //               alignment: Alignment.bottomCenter,
+  //               fit: BoxFit.cover,
+  //               opacity: 0.15,
+  //             ),
+  //             color: cLightWhite,
+  //             borderRadius: BorderRadius.only(
+  //               topLeft: Radius.circular(12.r),
+  //               topRight: Radius.circular(12.r),
+  //             ),
+  //           ),
+  //           child: Padding(
+  //             padding: EdgeInsets.all(8.h),
+  //             child: Column(
+  //               mainAxisSize: MainAxisSize.min,
+  //               crossAxisAlignment: CrossAxisAlignment.center,
+  //               children: [
+  //                 SizedBox(height: 10.h),
+  //                 ReusableText(
+  //                   text: 'Hãy xác minh số điện thoại của bạn',
+  //                   style: appStyle(18, cPrimary, FontWeight.w600),
+  //                 ),
+  //                 SizedBox(
+  //                   height: 250.h,
+  //                   child: ListView.builder(
+  //                     itemCount: verificationReasons.length,
+  //                     itemBuilder: (context, index) {
+  //                       return ListTile(
+  //                         leading: const Icon(
+  //                           Icons.check_circle_outline,
+  //                           color: cPrimary,
+  //                         ),
+  //                         title: Text(
+  //                           verificationReasons[index],
+  //                           textAlign: TextAlign.justify,
+  //                           style: appStyle(12, cDark, FontWeight.normal),
+  //                         ),
+  //                       );
+  //                     },
+  //                   ),
+  //                 ),
+  //                 SizedBox(height: 10.h),
+  //                 CustomButton(
+  //                   text: 'Bắt đầu xác minh',
+  //                   btnWidth: 250.w,
+  //                   btnHeight: 40.h,
+  //                   btnFontSite: 14.sp,
+  //                   onTap: () {
+  //                     Get.to(() => const PhoneVerificationPage());
+  //                   },
+  //                 ),
+  //               ],
+  //             ),
+  //           ),
+  //         ),
+  //       );
+  //     },
+  //   );
+  // }
 }

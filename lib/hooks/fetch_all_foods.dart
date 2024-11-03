@@ -59,6 +59,6 @@ FetchHook useFetchAllFoods() {
     data: foods.value,
     isLoading: isLoading.value,
     error: error.value,
-    refresh: refetch,
+    refetch: refetch,
   );
 }

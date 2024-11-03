@@ -49,14 +49,15 @@
 //   }
 
 //   void _verifyPhoneNumber(String phoneNumber) async {
-//     final controller = Get.put(PhoneVerificationController());
-
-//     await _verificationService.verifyPhoneNumber(controller.phone,
-//         codeSent: (String verificationId, int? resendToken) {
-//       setState(() {
-//         _verificationId = verificationId;
-//       });
-//     });
+//     await _verificationService.verifyPhoneNumber(
+//       phoneNumber,
+//       codeSent: (String verificationId, int? resendToken) {
+//         setState(() {
+//           _verificationId = verificationId;
+//           debugPrint("Verification ID received: $_verificationId");
+//         });
+//       },
+//     );
 //   }
 
 //   void _submitVerificationCode(String code) async {

@@ -55,7 +55,7 @@ class _SearchPageState extends State<SearchPage> {
         ),
         body: SafeArea(
           child: CustomContainer(
-            height: 656.h,
+            height: 655.h,
             color: Colors.white,
             containerContent: controller.isLoading
                 ? const FoodsListShimmer()

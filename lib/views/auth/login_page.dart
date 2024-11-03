@@ -105,16 +105,19 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           GestureDetector(
-                              onTap: () {
-                                Get.to(() => const RegistrationPage(),
-                                    transition: Transition.fadeIn,
-                                    duration:
-                                        const Duration(milliseconds: 250));
-                              },
-                              child: ReusableText(
-                                  text: 'Đăng ký',
-                                  style: appStyle(
-                                      12, Colors.blue, FontWeight.normal))),
+                            onTap: () {
+                              Get.to(
+                                () => const RegistrationPage(),
+                                transition: Transition.fadeIn,
+                                duration: const Duration(milliseconds: 250),
+                              );
+                            },
+                            child: ReusableText(
+                              text: 'Đăng ký',
+                              style:
+                                  appStyle(12, Colors.blue, FontWeight.normal),
+                            ),
+                          ),
                         ],
                       ),
                     ),

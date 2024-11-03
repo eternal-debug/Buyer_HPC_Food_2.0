@@ -59,6 +59,6 @@ FetchHook useFetchCategories() {
     data: categoriesItem.value,
     isLoading: isLoading.value,
     error: error.value,
-    refresh: refetch,
+    refetch: refetch,
   );
 }

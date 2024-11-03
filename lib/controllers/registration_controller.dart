@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:hpc_food/common/show_custom_toast.dart';
 import 'package:hpc_food/constants/constants.dart';
 import 'package:hpc_food/models/api_error.dart';
 import 'package:hpc_food/models/success_model.dart';
@@ -32,17 +32,10 @@ class RegistrationController extends GetxController {
 
         setLoading = false;
 
-        Get.snackbar('Đăng ký thành công', data.message,
-            colorText: cLightWhite,
-            backgroundColor: cTertiary,
-            icon: const Icon(Ionicons.fast_food_outline));
+        showCustomToast(Get.overlayContext!, null, 'Đăng ký thành công');
       } else {
         var error = apiErrorFromJson(response.body);
-
-        Get.snackbar('Có lỗi xảy ra', error.message,
-            colorText: cLightWhite,
-            backgroundColor: cRed,
-            icon: const Icon(Icons.error_outline));
+        showCustomToast(Get.overlayContext!, cRed, error.message);
       }
     } catch (e) {
       debugPrint(e.toString());

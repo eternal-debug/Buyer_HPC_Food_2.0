@@ -23,7 +23,6 @@
 //         },
 //         codeAutoRetrievalTimeout: (String verificationId) {});
 //   }
-// dart pub global activate flutterfire_cli
 
 //   Future<void> verifySmsCode(String verificationId, String smsCode) async {
 //     final PhoneAuthCredential credential = PhoneAuthProvider.credential(

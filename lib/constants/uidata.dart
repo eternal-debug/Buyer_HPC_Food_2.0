@@ -356,27 +356,27 @@
 //   }
 // ];
 
-const cart = [
-  {
-    "_id": "654b6588541d2aa2c1e89ce2",
-    "userId": "6547a4448cd1bd140ebddcef",
-    "productId": {
-      "_id": "6531ebbcc9e72013e5b65930",
-      "title": "Cơm Chiên Dương Châu",
-      "restaurant": "6530ebbcc9e72013e5b65933",
-      "rating": 4.9,
-      "ratingCount": "520",
-      "imageUrl": [
-        "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049911/rvkxprrgun17c53laii4.jpg"
-      ]
-    },
-    "additives": ["Thịt Nướng", "Trứng Chiên"],
-    "instructions": "Không cay, thêm chút nước tương",
-    "totalPrice": 49000,
-    "quantity": 1,
-    "__v": 0
-  }
-];
+// const cart = [
+//   {
+//     "_id": "654b6588541d2aa2c1e89ce2",
+//     "userId": "6547a4448cd1bd140ebddcef",
+//     "productId": {
+//       "_id": "6531ebbcc9e72013e5b65930",
+//       "title": "Cơm Chiên Dương Châu",
+//       "restaurant": "6530ebbcc9e72013e5b65933",
+//       "rating": 4.9,
+//       "ratingCount": "520",
+//       "imageUrl": [
+//         "https://res.cloudinary.com/dnffdqwfs/image/upload/v1730049911/rvkxprrgun17c53laii4.jpg"
+//       ]
+//     },
+//     "additives": ["Thịt Nướng", "Trứng Chiên"],
+//     "instructions": "Không cay, thêm chút nước tương",
+//     "totalPrice": 49000,
+//     "quantity": 1,
+//     "__v": 0
+//   }
+// ];
 
 const profile = {
   "_id": "6548a4448cd1bd140ebddcef",

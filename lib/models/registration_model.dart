@@ -19,14 +19,14 @@ class RegistrationModel {
 
   factory RegistrationModel.fromJson(Map<String, dynamic> json) =>
       RegistrationModel(
-        username: json["username"],
-        email: json["email"],
-        password: json["password"],
+        username: json['username'],
+        email: json['email'],
+        password: json['password'],
       );
 
   Map<String, dynamic> toJson() => {
-        "username": username,
-        "email": email,
-        "password": password,
+        'username': username,
+        'email': email,
+        'password': password,
       };
 }

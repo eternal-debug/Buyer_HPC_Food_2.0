@@ -59,6 +59,6 @@ FetchHook useFetchAllRestaurant() {
     data: restaurants.value,
     isLoading: isLoading.value,
     error: error.value,
-    refresh: refetch,
+    refetch: refetch,
   );
 }

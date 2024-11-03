@@ -31,7 +31,7 @@ class SearchFoodController extends GetxController {
 
     try {
       var response = await http.get(
-        Uri.parse("$appBaseUrl/api/foods/search/$key"),
+        Uri.parse('$appBaseUrl/api/foods/search/$key'),
       );
 
       if (response.statusCode == 200) {

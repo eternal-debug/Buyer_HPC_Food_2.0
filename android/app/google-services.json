@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "648384867205",
+    "project_id": "hpc-food",
+    "storage_bucket": "hpc-food.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648384867205:android:7b2893f5646b674bd0f2ec",
+        "android_client_info": {
+          "package_name": "com.example.hpc_food"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648384867205-um8ojc0f3mf4mutvcdu3q2lh4sthq017.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzqj3w23yccKP8vQMrx5lNF7noNrd7TPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648384867205-um8ojc0f3mf4mutvcdu3q2lh4sthq017.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "648384867205-dk7cpdio72tjtngjceu3aae0n0i178gk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hpcFood"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648384867205:android:f04ca9396efc0cc0d0f2ec",
+        "android_client_info": {
+          "package_name": "com.example.hpcfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648384867205-um8ojc0f3mf4mutvcdu3q2lh4sthq017.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzqj3w23yccKP8vQMrx5lNF7noNrd7TPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648384867205-um8ojc0f3mf4mutvcdu3q2lh4sthq017.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "648384867205-dk7cpdio72tjtngjceu3aae0n0i178gk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hpcFood"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

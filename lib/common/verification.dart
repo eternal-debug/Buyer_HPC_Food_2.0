@@ -1,7 +1,6 @@
+// import 'package:hpc_food/views/auth/phone_verification_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:hpc_food/views/auth/phone_verification_page.dart';
 import 'package:hpc_food/common/app_style.dart';
 import 'package:hpc_food/common/custom_button.dart';
 import 'package:hpc_food/common/reusable_text.dart';

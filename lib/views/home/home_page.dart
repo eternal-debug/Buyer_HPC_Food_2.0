@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:hpc_food/common/custom_appbar.dart';
 import 'package:hpc_food/common/custom_container.dart';
 import 'package:hpc_food/common/heading.dart';
 import 'package:hpc_food/constants/constants.dart';
 import 'package:hpc_food/controllers/category_controller.dart';
+import 'package:hpc_food/controllers/login_controller.dart';
+import 'package:hpc_food/models/login_response.dart';
+import 'package:hpc_food/views/auth/login_redirect.dart';
 import 'package:hpc_food/views/home/all_fastest_foods.dart';
 import 'package:hpc_food/views/home/all_nearby_restaurants.dart';
 import 'package:hpc_food/views/home/recommendations.dart';
@@ -20,19 +24,31 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(CategoryController());
+    LoginResponse? user;
+    final loginController = Get.put(LoginController());
+    final box = GetStorage();
+    String? token = box.read('token');
+    if (token != null) {
+      user = loginController.getUserInfo();
+    }
+    if (token == null) {
+      return const LoginRedirect();
+    }
+    final categoryController = Get.put(CategoryController());
     return Scaffold(
       backgroundColor: cPrimary,
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(130.h), child: const CustomAppBar()),
+        preferredSize: Size.fromHeight(130.h),
+        child: CustomAppBar(user: user),
+      ),
       body: SafeArea(
         child: CustomContainer(
-          height: 648.h,
+          height: 647.h,
           containerContent: Column(
             children: [
               const CategoryList(),
               Obx(
-                () => controller.categoryValue == ''
+                () => categoryController.categoryValue == ''
                     ? Column(
                         children: [
                           Heading(
@@ -77,7 +93,7 @@ class HomePage extends StatelessWidget {
                           children: [
                             Heading(
                               more: true,
-                              text: "${controller.titleValue}:",
+                              text: "${categoryController.titleValue}:",
                               onTap: () {
                                 Get.to(
                                   () => const Recommendations(),

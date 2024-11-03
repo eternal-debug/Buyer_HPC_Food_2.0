@@ -3,14 +3,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hpc_food/common/app_style.dart';
 import 'package:hpc_food/common/reusable_text.dart';
 import 'package:hpc_food/constants/constants.dart';
+import 'package:hpc_food/models/login_response.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar({super.key, this.user});
+
+  final LoginResponse? user;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
       width: width,
       height: 110.h,
       child: Container(
@@ -23,11 +26,9 @@ class CustomAppBar extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 CircleAvatar(
-                  radius: 30.r,
-                  backgroundColor: cGrayLight,
-                  backgroundImage: const NetworkImage(
-                      'https://i.pinimg.com/736x/83/ce/80/83ce8048cba3acd196ce2db255e9c53a.jpg'),
-                ),
+                    radius: 30.r,
+                    backgroundColor: cGrayLight,
+                    backgroundImage: NetworkImage(user!.profile)),
                 Padding(
                   padding: EdgeInsets.only(bottom: 6.h, left: 8.w),
                   child: Column(
@@ -35,7 +36,7 @@ class CustomAppBar extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ReusableText(
-                        text: 'Xin chào, User',
+                        text: 'Xin chào, ${user!.username}',
                         style: appStyle(20, cOffWhite, FontWeight.bold),
                       ),
                       SizedBox(

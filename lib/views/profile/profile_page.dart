@@ -9,7 +9,6 @@ import 'package:hpc_food/constants/constants.dart';
 import 'package:hpc_food/controllers/login_controller.dart';
 import 'package:hpc_food/models/login_response.dart';
 import 'package:hpc_food/views/auth/login_redirect.dart';
-import 'package:hpc_food/views/auth/verification_page.dart';
 import 'package:hpc_food/views/profile/widget/profile_app_bar.dart';
 import 'package:hpc_food/views/profile/widget/profile_tile_widget.dart';
 import 'package:hpc_food/views/profile/widget/user_info_widget.dart';
@@ -29,25 +28,23 @@ class ProfilePage extends StatelessWidget {
     if (token == null) {
       return const LoginRedirect();
     }
-    if (user != null && user.verification == false) {
-      return const VerificationPage();
-    }
     return Scaffold(
       backgroundColor: cPrimary,
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(40.h), child: const ProfileAppBar()),
       body: SafeArea(
         child: CustomContainer(
+          height: 690.h,
+          color: cPrimary,
           containerContent: Column(
             children: [
               UserInfoWidget(user: user),
-              SizedBox(
-                height: 10.h,
-              ),
+              SizedBox(height: 4.h),
               Container(
-                height: 581.h,
+                height: 594.h,
                 decoration: const BoxDecoration(color: cOffWhite),
                 child: ListView(
+                  shrinkWrap: true,
                   padding: EdgeInsets.zero,
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
