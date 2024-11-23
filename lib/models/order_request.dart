@@ -8,9 +8,9 @@ String orderRequestToJson(OrderRequest data) => json.encode(data.toJson());
 class OrderRequest {
   final String userId;
   final List<OrderItem> orderItems;
-  final double orderTotal;
+  final int orderTotal;
   final String deliveryFee;
-  final double grandTotal;
+  final int grandTotal;
   final String deliveryAddress;
   final String restaurantAddress;
   final String restaurantId;
@@ -34,9 +34,9 @@ class OrderRequest {
         userId: json['userId'],
         orderItems: List<OrderItem>.from(
             json['orderItems'].map((x) => OrderItem.fromJson(x))),
-        orderTotal: json['orderTotal']?.toDouble(),
+        orderTotal: json['orderTotal'],
         deliveryFee: json['deliveryFee'],
-        grandTotal: json['grandTotal']?.toDouble(),
+        grandTotal: json['grandTotal'],
         deliveryAddress: json['deliveryAddress'],
         restaurantAddress: json['restaurantAddress'],
         restaurantId: json['restaurantId'],
@@ -65,7 +65,7 @@ class OrderRequest {
 class OrderItem {
   final String foodId;
   final int quantity;
-  final double price;
+  final int price;
   final List<String> additives;
   final String instructions;
 
@@ -80,7 +80,7 @@ class OrderItem {
   factory OrderItem.fromJson(Map<String, dynamic> json) => OrderItem(
         foodId: json['foodId'],
         quantity: json['quantity'],
-        price: json['price']?.toDouble(),
+        price: json['price'],
         additives: List<String>.from(json['additives'].map((x) => x)),
         instructions: json['instructions'],
       );

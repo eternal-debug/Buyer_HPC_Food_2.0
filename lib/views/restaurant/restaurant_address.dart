@@ -18,14 +18,14 @@ import 'package:hpc_food/models/address_model.dart';
 import 'package:hpc_food/views/auth/widget/email_textfield.dart';
 import 'package:http/http.dart' as http;
 
-class ShippingAddress extends StatefulWidget {
-  const ShippingAddress({super.key});
+class RestaurantAddress extends StatefulWidget {
+  const RestaurantAddress({super.key});
 
   @override
-  State<ShippingAddress> createState() => _ShippingAddressState();
+  State<RestaurantAddress> createState() => _RestaurantAddressState();
 }
 
-class _ShippingAddressState extends State<ShippingAddress> {
+class _RestaurantAddressState extends State<RestaurantAddress> {
   late final PageController _pageController = PageController(initialPage: 0);
   GoogleMapController? _mapController;
   final TextEditingController _searchController = TextEditingController();
@@ -198,7 +198,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                               position: const LatLng(20.9489541, 105.822158),
                               draggable: true,
                               onDragEnd: (LatLng position) {
-                                // locationController.getUserAddress(position);
+                                locationController.getUserAddress(position);
                                 setState(() {
                                   _selectedPosition = position;
                                 });
@@ -213,7 +213,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                               position: _selectedPosition!,
                               draggable: true,
                               onDragEnd: (LatLng position) {
-                                // locationController.getUserAddress(position);
+                                locationController.getUserAddress(position);
                                 setState(
                                   () {
                                     _selectedPosition = position;

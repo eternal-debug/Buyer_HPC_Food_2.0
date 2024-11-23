@@ -27,10 +27,6 @@ class LoginRedirect extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: cPrimary,
         elevation: 0,
-        title: ReusableText(
-          text: 'Hãy đăng nhập để tiếp tục',
-          style: appStyle(18, cLightWhite, FontWeight.w600),
-        ),
       ),
       body: SafeArea(
         child: CustomContainer(

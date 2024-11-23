@@ -20,7 +20,7 @@ class _CustomToast extends StatefulWidget {
   final Color? color;
   final String message;
 
-  const _CustomToast({super.key, required this.color, required this.message});
+  const _CustomToast({required this.color, required this.message});
 
   @override
   __CustomToastState createState() => __CustomToastState();

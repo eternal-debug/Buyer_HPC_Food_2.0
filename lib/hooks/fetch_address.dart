@@ -11,7 +11,8 @@ FetchAddresses useFetchAddresses() {
   final addresses = useState<List<AddressResponse>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
-  final appiError = useState<ApiError?>(null);
+  final apiError = useState<ApiError?>(null);
+  bool isDisposed = false;
 
   Future<void> fetchData() async {
     String accessToken = box.read('token');
@@ -29,23 +30,29 @@ FetchAddresses useFetchAddresses() {
       if (response.statusCode == 200) {
         addresses.value = addressResponseFromJson(response.body);
       } else {
-        appiError.value = apiErrorFromJson(response.body);
+        apiError.value = apiErrorFromJson(response.body);
       }
     } catch (e) {
       error.value = e as Exception;
     } finally {
-      isLoading.value = false;
+      if (!isDisposed) {
+        isLoading.value = false;
+      }
     }
   }
 
   useEffect(() {
     fetchData();
-    return null;
+    return () {
+      isDisposed = true;
+    };
   }, []);
 
   void refetch() {
-    isLoading.value = true;
-    fetchData();
+    if (!isDisposed) {
+      isLoading.value = true;
+      fetchData();
+    }
   }
 
   return FetchAddresses(

@@ -31,9 +31,6 @@ class AddressTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ReusableText(
-              text: address.postalCode,
-              style: appStyle(11, cGray, FontWeight.w500)),
-          ReusableText(
               text: "Tap to set address as default",
               style: appStyle(8, cGray, FontWeight.w500)),
         ],

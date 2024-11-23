@@ -6,6 +6,7 @@ import 'package:hpc_food/constants/constants.dart';
 import 'package:hpc_food/controllers/login_controller.dart';
 import 'package:hpc_food/controllers/tab_index_controller.dart';
 import 'package:hpc_food/models/login_response.dart';
+import 'package:hpc_food/views/auth/login_page.dart';
 import 'package:hpc_food/views/auth/login_redirect.dart';
 import 'package:hpc_food/views/auth/verification_page.dart';
 import 'package:hpc_food/views/cart/cart_page.dart';
@@ -34,7 +35,7 @@ class MainScreen extends StatelessWidget {
       user = loginController.getUserInfo();
     }
     if (token == null) {
-      return const LoginRedirect();
+      return const LoginPage();
     }
     if (user != null && user.verification == false) {
       return const VerificationPage();

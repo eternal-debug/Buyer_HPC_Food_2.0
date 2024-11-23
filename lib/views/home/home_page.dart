@@ -98,7 +98,7 @@ class HomePage extends StatelessWidget {
                                 Get.to(
                                   () => const Recommendations(),
                                   transition: Transition.cupertino,
-                                  duration: const Duration(milliseconds: 900),
+                                  duration: const Duration(milliseconds: 250),
                                 );
                               },
                             ),

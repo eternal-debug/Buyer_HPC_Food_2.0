@@ -12,6 +12,8 @@ import 'package:hpc_food/common/shimmers/foodlist_shimmer.dart';
 import 'package:hpc_food/constants/constants.dart';
 import 'package:hpc_food/controllers/login_controller.dart';
 import 'package:hpc_food/hooks/fetch_cart.dart';
+import 'package:hpc_food/hooks/fetch_default.dart';
+import 'package:hpc_food/models/addresses_response.dart';
 import 'package:hpc_food/models/cart_response.dart';
 import 'package:hpc_food/models/login_response.dart';
 import 'package:hpc_food/views/auth/login_redirect.dart';
@@ -35,6 +37,8 @@ class CartPage extends HookWidget {
     final List<CartResponse> carts = hookResult.data ?? [];
     final isLoading = hookResult.isLoading;
     final refetch = hookResult.refetch;
+    final data = useFetchDefault();
+    AddressResponse? address = data.data;
 
     LoginResponse? user;
 
@@ -88,20 +92,106 @@ class CartPage extends HookWidget {
                     )
                   : Padding(
                       padding: EdgeInsets.symmetric(horizontal: 12.w),
-                      child: SizedBox(
-                        width: width,
-                        height: height,
-                        child: ListView.builder(
-                          itemCount: carts.length,
-                          itemBuilder: (context, i) {
-                            var cart = carts[i];
-                            return CartTile(
-                              refetch: refetch,
-                              color: cLightWhite,
-                              cart: cart,
-                            );
-                          },
-                        ),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 8.h),
+                          GestureDetector(
+                            onTap: () {
+                              // final orderItems = carts.map((cart) {
+                              //   return OrderItem(
+                              //     foodId: cart.productId.id,
+                              //     quantity: cart.quantity,
+                              //     price: cart.totalPrice,
+                              //     additives: cart.additives,
+                              //     instructions: cart.instructions ?? '',
+                              //   );
+                              // }).toList();
+
+                              // int orderTotal = orderItems.fold(
+                              //   0,
+                              //   (sum, item) =>
+                              //       sum + (item.price * item.quantity),
+                              // );
+
+                              // const int deliveryFee = 5000;
+                              // int grandTotal = orderTotal + deliveryFee;
+
+                              // final orderRequest = OrderRequest(
+                              //   userId: user!.id,
+                              //   orderItems: orderItems,
+                              //   orderTotal: orderTotal,
+                              //   deliveryFee: deliveryFee.toStringAsFixed(2),
+                              //   grandTotal: grandTotal,
+                              //   deliveryAddress: user.address,
+                              //   restaurantAddress:
+                              //       carts.first.productId.restaurant,
+                              //   restaurantId: carts.first.productId.id,
+                              //   restaurantDescription: [0.0, 0.0],
+                              //   recipientDescription: [0.0, 0.0],
+                              // );
+
+                              // Get.to(
+                              //   () => OrderPage(
+                              //     orderRequest: orderRequest,
+                              //     restaurant: null,
+                              //     food: null,
+                              //     address: null,
+                              //   ),
+                              //   transition: Transition.cupertino,
+                              //   duration: const Duration(milliseconds: 900),
+                              // );
+                            },
+                            child: Container(
+                              height: 50.h,
+                              decoration: BoxDecoration(
+                                color: cPrimary,
+                                borderRadius: BorderRadius.circular(30.r),
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 18.w),
+                                    child: ReusableText(
+                                      text: 'Đến trang thanh toán',
+                                      style: appStyle(
+                                          18, cLightWhite, FontWeight.w600),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 50.h,
+                                    width: 50.h,
+                                    decoration: const BoxDecoration(
+                                      color: cSecondary,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: const Icon(
+                                      Icons.attach_money_rounded,
+                                      color: cLightWhite,
+                                      size: 35,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 8.h),
+                          ListView.builder(
+                            physics: const NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemCount: carts.length,
+                            itemBuilder: (context, i) {
+                              var cart = carts[i];
+                              return CartTile(
+                                refetch: refetch,
+                                color: cLightWhite,
+                                cart: cart,
+                              );
+                            },
+                          ),
+                        ],
                       ),
                     ),
         ),

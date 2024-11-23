@@ -27,120 +27,117 @@ class CartTile extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.hardEdge,
         children: [
-          Padding(
-            padding: EdgeInsets.only(top: 8.h),
+          Container(
+            margin: EdgeInsets.only(bottom: 8.h),
+            height: 100.h,
+            width: width,
+            decoration: BoxDecoration(
+              color: color ?? cLightWhite,
+              borderRadius: BorderRadius.circular(9.r),
+            ),
             child: Container(
-              margin: EdgeInsets.only(bottom: 8.h),
-              height: 100.h,
-              width: width,
-              decoration: BoxDecoration(
-                color: color ?? cLightWhite,
-                borderRadius: BorderRadius.circular(9.r),
-              ),
-              child: Container(
-                child: Padding(
-                  padding: EdgeInsets.all(4.r),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(9.r)),
-                        child: Stack(
-                          children: [
-                            SizedBox(
-                              width: 100.w,
-                              height: 100.h,
-                              child: Image.network(
-                                cart.productId.imageUrl,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Positioned(
-                              bottom: 0,
-                              child: Container(
-                                color: cDark.withOpacity(0.6),
-                                alignment: Alignment.center,
-                                width: 100.w,
-                                height: 20.h,
-                                child: RatingBarIndicator(
-                                  rating: cart.productId.rating,
-                                  itemCount: 5,
-                                  itemBuilder: (context, index) => const Icon(
-                                    Icons.star,
-                                    color: cOffWhite,
-                                  ),
-                                  itemSize: 16.h,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 6.w),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+              child: Padding(
+                padding: EdgeInsets.all(4.r),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(9.r)),
+                      child: Stack(
                         children: [
-                          ReusableText(
-                            text: cart.productId.title,
-                            style: appStyle(16, cDark, FontWeight.w500),
-                          ),
                           SizedBox(
-                            width: width * 0.63,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                ReusableText(
-                                  text: 'Số lượng: ${cart.quantity}',
-                                  style: appStyle(12, cGray, FontWeight.w500),
-                                ),
-                                ReusableText(
-                                  text:
-                                      '${NumberFormat.currency(locale: 'vi', symbol: '').format(cart.totalPrice).replaceAll(',', '.')}đ',
-                                  style: appStyle(14, cRed, FontWeight.bold),
-                                ),
-                              ],
+                            width: 100.w,
+                            height: 100.h,
+                            child: Image.network(
+                              cart.productId.imageUrl,
+                              fit: BoxFit.cover,
                             ),
                           ),
-                          SizedBox(
-                            width: width * 0.63,
-                            height: 20.h,
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: cart.additives.length,
-                              itemBuilder: (context, index) {
-                                var additive = cart.additives[index];
-                                return Container(
-                                  margin: EdgeInsets.only(right: 6.w),
-                                  decoration: BoxDecoration(
-                                    color: cTertiary,
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(9.r),
-                                    ),
+                          Positioned(
+                            bottom: 0,
+                            child: Container(
+                              color: cDark.withOpacity(0.6),
+                              alignment: Alignment.center,
+                              width: 100.w,
+                              height: 20.h,
+                              child: RatingBarIndicator(
+                                rating: cart.productId.rating,
+                                itemCount: 5,
+                                itemBuilder: (context, index) => const Icon(
+                                  Icons.star,
+                                  color: cOffWhite,
+                                ),
+                                itemSize: 16.h,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(width: 6.w),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ReusableText(
+                          text: cart.productId.title,
+                          style: appStyle(16, cDark, FontWeight.w500),
+                        ),
+                        SizedBox(
+                          width: width * 0.63,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              ReusableText(
+                                text: 'Số lượng: ${cart.quantity}',
+                                style: appStyle(12, cGray, FontWeight.w500),
+                              ),
+                              ReusableText(
+                                text:
+                                    '${NumberFormat.currency(locale: 'vi', symbol: '').format(cart.totalPrice).replaceAll(',', '.')}đ',
+                                style: appStyle(14, cRed, FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: width * 0.63,
+                          height: 20.h,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: cart.additives.length,
+                            itemBuilder: (context, index) {
+                              var additive = cart.additives[index];
+                              return Container(
+                                margin: EdgeInsets.only(right: 6.w),
+                                decoration: BoxDecoration(
+                                  color: cTertiary,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(9.r),
                                   ),
-                                  child: Center(
-                                    child: Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(horizontal: 4.w),
-                                      child: ReusableText(
-                                        text: additive,
-                                        style: appStyle(
-                                          10,
-                                          cOffWhite,
-                                          FontWeight.w400,
-                                        ),
+                                ),
+                                child: Center(
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 4.w),
+                                    child: ReusableText(
+                                      text: additive,
+                                      style: appStyle(
+                                        10,
+                                        cOffWhite,
+                                        FontWeight.w400,
                                       ),
                                     ),
                                   ),
-                                );
-                              },
-                            ),
+                                ),
+                              );
+                            },
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),

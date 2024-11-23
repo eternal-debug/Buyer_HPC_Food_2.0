@@ -10,7 +10,6 @@ import 'package:hpc_food/views/restaurant/directions_page.dart';
 import 'package:hpc_food/views/restaurant/widget/recommend_widget.dart';
 import 'package:hpc_food/views/restaurant/widget/restaurant_bottom_bar.dart';
 import 'package:hpc_food/views/restaurant/widget/restaurant_menu.dart';
-import 'package:hpc_food/views/restaurant/widget/row_text.dart';
 
 class RestaurantPage extends StatefulWidget {
   const RestaurantPage({super.key, required this.restaurant});
@@ -79,7 +78,14 @@ class _RestaurantPageState extends State<RestaurantPage>
                         ),
                         GestureDetector(
                           onTap: () {
-                            Get.to(() => const DirectionsPage());
+                            Get.to(
+                              () => DirectionsPage(
+                                latitude:
+                                    widget.restaurant!.description.latitude,
+                                longitude:
+                                    widget.restaurant!.description.longitude,
+                              ),
+                            );
                           },
                           child: const Icon(
                             Icons.location_on_outlined,
@@ -94,23 +100,20 @@ class _RestaurantPageState extends State<RestaurantPage>
               ],
             ),
             SizedBox(height: 10.h),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  RowText(
-                    first: "Khoảng cách đến cửa hàng",
-                    second: "2.7 km",
+                  ReusableText(
+                    text: "Địa chỉ:",
+                    style: appStyle(14, cDark, FontWeight.w500),
                   ),
-                  RowText(
-                    first: "Thời gian di chuyển",
-                    second: "30 min",
+                  Text(
+                    widget.restaurant!.description.address,
+                    style: appStyle(14, cDark, FontWeight.w500),
                   ),
-                  RowText(
-                    first: "Giá trung bình",
-                    second: "\$2.7",
-                  ),
-                  Divider(thickness: 1),
+                  const Divider(thickness: 1),
                 ],
               ),
             ),

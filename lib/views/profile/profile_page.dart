@@ -9,6 +9,8 @@ import 'package:hpc_food/constants/constants.dart';
 import 'package:hpc_food/controllers/login_controller.dart';
 import 'package:hpc_food/models/login_response.dart';
 import 'package:hpc_food/views/auth/login_redirect.dart';
+import 'package:hpc_food/views/orders/user_orders.dart';
+import 'package:hpc_food/views/profile/addresses_page.dart';
 import 'package:hpc_food/views/profile/widget/profile_app_bar.dart';
 import 'package:hpc_food/views/profile/widget/profile_tile_widget.dart';
 import 'package:hpc_food/views/profile/widget/user_info_widget.dart';
@@ -50,7 +52,11 @@ class ProfilePage extends StatelessWidget {
                   children: [
                     ProfileTileWidget(
                         onTap: () {
-                          Get.to(() => const LoginRedirect());
+                          Get.to(
+                            () => const UserOrders(),
+                            transition: Transition.cupertino,
+                            duration: const Duration(milliseconds: 250),
+                          );
                         },
                         title: 'Đơn hàng của tôi',
                         icon: Ionicons.fast_food_outline),
@@ -67,8 +73,14 @@ class ProfilePage extends StatelessWidget {
                         title: 'Voucher',
                         icon: MaterialCommunityIcons.tag_outline),
                     ProfileTileWidget(
-                        onTap: () {},
-                        title: 'Địa chỉ giao hàng',
+                        onTap: () {
+                          Get.to(
+                            () => const Addresses(),
+                            transition: Transition.rightToLeft,
+                            duration: const Duration(milliseconds: 250),
+                          );
+                        },
+                        title: 'Địa chỉ của bạn',
                         icon: SimpleLineIcons.location_pin),
                     ProfileTileWidget(
                         onTap: () {},

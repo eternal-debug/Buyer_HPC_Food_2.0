@@ -11,7 +11,8 @@ FetchHook useFetchCart() {
   final cart = useState<List<CartResponse>?>(null);
   final isLoading = useState<bool>(false);
   final error = useState<Exception?>(null);
-  final appiError = useState<ApiError?>(null);
+  final apiError = useState<ApiError?>(null);
+  bool isDisposed = false;
 
   Future<void> fetchData() async {
     String accessToken = box.read('token');
@@ -27,25 +28,35 @@ FetchHook useFetchCart() {
       final response = await http.get(url, headers: headers);
 
       if (response.statusCode == 200) {
-        cart.value = cartResponseFromJson(response.body);
+        if (!isDisposed) {
+          cart.value = cartResponseFromJson(response.body);
+        }
       } else {
-        appiError.value = apiErrorFromJson(response.body);
+        if (!isDisposed) {
+          apiError.value = apiErrorFromJson(response.body);
+        }
       }
     } catch (e) {
       error.value = e as Exception;
     } finally {
-      isLoading.value = false;
+      if (!isDisposed) {
+        isLoading.value = false;
+      }
     }
   }
 
   useEffect(() {
     fetchData();
-    return null;
+    return () {
+      isDisposed = true;
+    };
   }, []);
 
   void refetch() {
-    isLoading.value = true;
-    fetchData();
+    if (!isDisposed) {
+      isLoading.value = true;
+      fetchData();
+    }
   }
 
   return FetchHook(

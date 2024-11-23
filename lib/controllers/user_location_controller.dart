@@ -51,14 +51,6 @@ class UserLocationController extends GetxController {
     _address1.value = value;
   }
 
-  RxString _postalCode = ''.obs;
-
-  String get postalCode => _postalCode.value;
-
-  set setPostalCode(String value) {
-    _postalCode.value = value;
-  }
-
   void getUserAddress(LatLng posistion) async {
     final url = Uri.parse(
         'https://maps.googleapis.com/maps/api/geocode/json?latlng=${posistion.latitude},${posistion.longitude}&key=$googleApiKey');
@@ -70,15 +62,6 @@ class UserLocationController extends GetxController {
 
       final address = responseBody['results'][0]['formatted_address'];
       setAddress = address;
-
-      final addressComponents =
-          responseBody['results'][0]['address_components'];
-
-      for (var component in addressComponents) {
-        if (component['types'].contains('postal_code')) {
-          setPostalCode = component['long_name'];
-        }
-      }
     }
   }
 
